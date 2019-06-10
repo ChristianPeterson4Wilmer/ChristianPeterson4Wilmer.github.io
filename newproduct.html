@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+<!-- https://script.google.com/macros/s/AKfycbx1FpDhW4sBpAa02Rjy81dSD1NguQksQYbgj78x/exec !-->
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="description" content="Form example">
+	<title>Form Example</title>
+	
+	<style>
+		form {
+			text-align: center;
+			width: 50%;
+			margin: auto;
+		}
+		
+		.line {
+			padding-bottom: 8px;
+			display: block;
+		}
+		
+		.left-side {
+			position: relative;
+			left: 10%;
+			float: left;
+			clear: left;
+		}
+		
+		.right-side {
+			position: relative;
+			float:right;
+			clear: right;
+		}
+		
+		input[type=text] {
+			width: 300px;
+		}
+		
+		input[type=submit] {
+			float: right;
+		}
+		
+		textarea {
+		position: relative;
+		 left: 5%;
+		}
+	</style>
+</head>
+<body>
+	<form class="gform" method="POST" data-email="Christian.Peterson@4wilmer.com" id="newprdctform"
+	action="https://script.google.com/macros/s/AKfycbx1FpDhW4sBpAa02Rjy81dSD1NguQksQYbgj78x/exec" autocomplete="off">
+		<h2>4Wilmer.com Site Update</h2>
+		<h3><i>New Product Request</i></h3>
+	
+		<h4>Your Information</h4>
+		<span class="line"><span class="left-side">First & Last Name</span> <input class="right-side" type="text" name="user-name" required></span> <br />
+		<span class="line"><span class="left-side">Email </span><input class="right-side" type="text" name="user-email" required></span> <br />
+		
+		<br />
+		<h4>New Product Information</h4>
+		<span class="line"><span class="left-side">Product Name</span><input class="right-side" type="text" name="product-name" required></span> <br />
+		<span class="line"><span class="left-side">Product Group</span><input class="right-side" type="text" name="product-group" required></span> <br />
+		<span class="line"><span class="left-side">Product Image</span><input class="right-side" type="text" name="product-image" required></span> <br />
+		
+		New Product Description<br />
+		<span class="line">
+		<textarea name="product-new-desc" form="newprdctform" rows="5" cols="75"></textarea>
+		</span>
+		 <br />
+		 
+		 Short Description<br />
+		 <span class="line">
+		 <textarea name="product-short-desc" form="newprdctform" rows="5" cols="75" required></textarea>
+		 </span>
+		 <br />
+		 
+		 Long Description<br />
+		 <span class="line">
+		 <textarea name="product-long-desc" form="newprdctform" rows="5" cols="75" required></textarea>
+		 </span>
+		 <br />
+		 
+		 More Resources <br />
+		 <span class="line">
+		 <textarea name="product-resources" form="newprdctform" rows="5" cols="75" required></textarea>
+		 </span>
+		 <br />
+		 
+		 Additional Comments<br />
+		 <span class="line">
+		 <textarea name="product-comments" form="newprdctform" rows="3" cols="75"></textarea>
+		 </span>
+		 <br />
+		
+		
+		<input type="submit">
+	</form>
+</body>
+</html>
