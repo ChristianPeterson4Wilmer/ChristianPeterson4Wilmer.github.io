@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="description" content="4wilmer New Product Request Form">
+	<title>New Product Request</title>
+	
+	<link rel="stylesheet" type="text/css" href="styles_v1.css">
+	<script src="scripts.js"></script>
+	
+	<script>
+		function displayToolTip(key) {
+			document.getElementById('help-tooltip').style.visibility = 'visible';
+			
+			var headerText = "";
+			var paragraphText = "";
+			
+			switch(key) {
+				case 0:
+					headerText = "Your First and Last Name";
+					paragraphText = "Required. Let me know who is sending the request.";
+					break;
+				case 1:
+					headerText = "Your email";
+					paragraphText = "Required. I need your email to get into contact with you if there are any issues or to let you know when update is complete.";
+					break;
+				case 2:
+					headerText = "Product's Name";
+					paragraphText = "Required. Name of Product displayed on website.";
+					break;
+				case 3:
+					headerText = "Product's Group";
+					paragraphText = "Required. Categroy Product belongs to. For example: \'Deposit Tickets\' belong to the \'Financial Accessories\' Catergory.";
+					paragraphText += "<br /> I'd also recommend including if this product belongs to \'Financial Products\', \'Healthcare Products\', or \'All Markets\'";
+					break;
+				case 4:
+					headerText = "Product's Image";
+					paragraphText = "Click \'Email Images\' to begin emailing your product images to me. Please change the subject to the Product's name and attach your images.";
+					paragraphText += " If there are multiple images please describe how you want them displayed on the page in email's body."
+					break;
+				case 5:
+					headerText = "New Product Description";
+					paragraphText = "Individual products that are announced have a section on the \'New Products\' page of 4wilmer briefly describing what they are.";
+					break;
+				case 6:
+					headerText = "Product's Short Description";
+					paragraphText = "Required. Brief description of product that displays on a product group's landing page.";
+					break;
+				case 7:
+					headerText = "Product's Long Description";
+					paragraphText = "Required. Description of product that appears under \'Additional Details\' on a product page.";
+					break;
+				case 8:
+					headerText = "More Resources";
+					paragraphText = "Product's generally have a \'More Resources\' Section which contains any additional links. Usually used for flyers, additional information, or promotional material.";
+					paragraphText += " This section usually matches what's on the \'Resource Library\' page for the product or product group.";
+					break;
+				case 9:
+					headerText = "Comments";
+					paragraphText = "Any additional information you'd like to add.";
+					break;
+			}
+			
+			document.getElementById('help-header').innerHTML = headerText;
+			document.getElementById('help-text').innerHTML = paragraphText;
+		}
+		
+		function hideToolTip() {
+			document.getElementById('help-tooltip').style.visibility = 'hidden';
+		}
+	</script>
+</head>
+<body onload="load()">
+<div class="help" id="help-tooltip">
+	<h3 id="help-header"></h3>
+	<p id="help-text"></p>
+</div>
+<div id="form">
+	<form class="gform" method="POST" data-email="Christian.Peterson@4wilmer.com" id="newprdctform"
+	action="https://script.google.com/macros/s/AKfycbx1FpDhW4sBpAa02Rjy81dSD1NguQksQYbgj78x/exec" autocomplete="off">
+		<h2>4Wilmer.com Site Update</h2>
+		<h3><i>New Product Request</i></h3>
+		<p id="info">Product Request Forms are required for each individual product. If these are assosciated with a new product group please additionally fill out the "New Product Group Form"
+		as well. If you need <b>Help</b> hover your mouse over any entry to get a brief description. 
+		If you'd like to see what a product page looks like <a href="img/img_newprodexample.png" target="_blank">Click Here</a>.</p>
+	
+		<h4>Your Information</h4>
+		<span class="line" onmouseenter="displayToolTip(0)" onmouseleave="hideToolTip()"><span class="left-side">First & Last Name</span> <input class="right-side" type="text" name="user-name" required></span> <br />
+		<span class="line" onmouseenter="displayToolTip(1)" onmouseleave="hideToolTip()"><span class="left-side">Email </span><input class="right-side" type="text" name="user-email" required></span> <br />
+		
+		<br />
+		<h4>New Product Information</h4>
+		<span class="line" onmouseenter="displayToolTip(2)" onmouseleave="hideToolTip()"><span class="left-side">Product Name</span><input class="right-side" type="text" name="product-name" required></span> <br />
+		<span class="line" onmouseenter="displayToolTip(3)" onmouseleave="hideToolTip()"><span class="left-side">Product Group</span><input class="right-side" type="text" name="product-group" required></span> <br />
+		<span class="line" onmouseenter="displayToolTip(4)" onmouseleave="hideToolTip()"><span class="left-side">Product Image</span><span class="right-side"><a href="mailto:Christian.Peterson@4wilmer.com?subject=Enter Product Name Here&body=Attach Images">Email Images</a></span></span> <br />
+		
+		New Product Description<br />
+		<span class="line" onmouseenter="displayToolTip(5)" onmouseleave="hideToolTip()">
+		<textarea name="product-new-desc" form="newprdctform" rows="5" cols="75"></textarea>
+		</span>
+		 <br />
+		 
+		 Short Description<br />
+		 <span class="line" onmouseenter="displayToolTip(6)" onmouseleave="hideToolTip()">
+		 <textarea name="product-short-desc" form="newprdctform" rows="5" cols="75" required></textarea>
+		 </span>
+		 <br />
+		 
+		 Long Description<br />
+		 <span class="line" onmouseenter="displayToolTip(7)" onmouseleave="hideToolTip()">
+		 <textarea name="product-long-desc" form="newprdctform" rows="5" cols="75" required></textarea>
+		 </span>
+		 <br />
+		 
+		 More Resources <br />
+		 <span class="line" onmouseenter="displayToolTip(8)" onmouseleave="hideToolTip()">
+		 <textarea name="product-resources" form="newprdctform" rows="5" cols="75"></textarea>
+		 </span>
+		 <br />
+		 
+		 Additional Comments<br />
+		 <span class="line" onmouseenter="displayToolTip(9)" onmouseleave="hideToolTip()">
+		 <textarea name="product-comments" form="newprdctform" rows="3" cols="75"></textarea>
+		 </span>
+		 <br />
+		
+		
+		<input type="submit">
+	</form>
+	</div>
+	
+</body>
+</html>
