@@ -9,6 +9,8 @@
 body {
 	font-family: Verdana, Arial, Courier, Helvetica, sans-serif;
 	font-size: 14px;
+
+	background-color: #0B4F6C;
 	background-color: var(--drk-bck-clr);
 }
 form {
@@ -34,6 +36,7 @@ form {
 }
 
 input[type=text] {
+	border-color: #01BAEF;
 	border-color: var(--hlight-clr);
 	width: 300px;
 }
@@ -50,6 +53,7 @@ input[type=submit] {
 	padding-bottom: 5px;
 	margin-bottom: 5%;
 	
+	border-color: #01BAEF;
 	border-color: var(--hlight-clr);
 }
 
@@ -59,42 +63,34 @@ input[type=submit]:hover {
 
 textarea {
 	position: relative;
+
+	border-color: #01BAEF;
 	border-color: var(--hlight-clr);
 }
 
 div#content {
-	position: absolute;
-	height: 100%;
+	position: relative;
+	min-height: 100%;
 	width: 50%;
 	left: 25%;
 	top: 0;
-	bottom: 0;
-	overflow: auto;
+
+	display: inline-block;
 	
+	background-color: #F4F4F4;
 	background-color: var(--bck-clr);
 	text-align: center;
-}
-
-div#form {
-	position: absolute;
-	height: 100%;
-	width: 50%;
-	left: 25%;
-	top: 0;
-	bottom: 0;
-	overflow: auto;
-	
-	background-color: var(--bck-clr);
 }
 
 div#question {
 	padding: 4px;
 	margin-bottom: 5%;
+	background-color: #eaeaea;
 	background-color: var(--gry-bck-clr);
 }
 
 div#home {
-	position: absolute;
+	position: fixed;
 	top: 0px;
 	left: 2%;
 	text-align: center;
@@ -114,7 +110,9 @@ div#home {
 }
 
 .help {
+	background-color: #F4F4F4;
 	background-color: var(--bck-clr);
+	border-color: #01BAEF;
 	border: 1px solid var(--hlight-clr);
 	border-radius: 10px;
 	position: fixed;
@@ -130,6 +128,7 @@ p#info {
 
 a {
 	text-decoration: none;
+	color: #01BAEF;
 	color: var(--hlight-clr);
 }
 
