@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="description" content="Request help from Technical Marketing Specialist">
+
+        <title>Help Request</title>
+        <link rel="stylesheet" type="text/css" href="styles_v1.css">
+        <script src="scripts.js"></script>
+    </head>
+
+    <body onload="load()">
+        <div class="help" id="help-tooltip">
+        	<h3 id="help-header"></h3>
+	        <p id="help-text"></p>
+        </div>
+        <div id="background"></div>
+        <div id="content">
+            <form class="gform" method="POST" data-email="Christian.Peterson@4wilmer.com" id="helpform"
+            action="https://script.google.com/macros/s/AKfycbxrwbpRgxmWoslWk1UISyuvbOy1Hij_xo1V4l2qXw/exec" autocomplete="off">
+            <h2>Help Request</h2>
+            <p id="info">
+                    Any issue you have feel free to fill out this form and I will get baack to you as soon as I can.
+                    The only information <b>Required</b> on this form is First & Last name, Email, and Issue Description.
+                    If the issue is related to <a href="http://www.4printplayer.com" target="_blank">PrintPlayer</a> or 
+                    <a href="http://www.yourwilmer.com" target="_blank">YourWilmer</a>
+                    I will most likely need the customer's account number.
+                    If you need <b>Help</b> hover your mouse over any entry to get a brief description. 
+            </p>
+            <h4>Your Information</h4>
+            <span class="line" onmouseenter="displayToolTip(0)" onmouseleave="hideToolTip()"><span class="left-side">First & Last Name</span> <input class="right-side" type="text" name="user-name" id="user-name" required></span> <br />
+            <span class="line" onmouseenter="displayToolTip(1)" onmouseleave="hideToolTip()"><span class="left-side">Email </span><input class="right-side" type="text" name="email" required></span> <br />
+
+            <h4>Customer Information</h4>
+            <span class="line" onmouseenter="displayToolTip(14)" onmouseleave="hideToolTip()">
+                <span class="left-side">Customer Name</span>
+                <input class="right-side" type="text" name="customer-name">              
+            </span>
+            <br />
+            <span class="line" onmouseenter="displayToolTip(15)" onmouseleave="hideToolTip()">
+                    <span class="left-side">Customer Email</span>
+                    <input class="right-side" type="text" name="customer-email">              
+            </span>
+            <br />
+            <span class="line" onmouseenter="displayToolTip(16)" onmouseleave="hideToolTip()">
+                    <span class="left-side">Customer Account Number</span>
+                    <input class="right-side" type="text" name="customer-acctnum">              
+            </span>
+            <br />
+            <br />
+            <div onmouseenter="displayToolTip(17)" onmouseLeave="hideToolTip()">
+            Website <br/>
+                <span class="line">
+                    <input type="radio" name="issue-website" value="4wilmer.com">4wilmer.com
+                    <input type="radio" name="issue-website" value="yourwilmer.com">yourwilmer.com
+                    <input type="radio" name="issue-website" value="4printplayer.com">4printplayer.com
+                     <input type="radio" name="issue-website" value="NA" checked>NA/Other/Don't Know       
+                </span>
+                <br />
+            </div>
+            
+            Issue Description
+            <span class="line" onmouseenter="displayToolTip(18)" onmouseleave="hideToolTip()">
+                <textarea name="issue" form="helpform" rows="7" cols="75" required></textarea>
+            </span>
+            <br />
+
+            <input type="submit"></form>
+        </div>
+    </body>
+</html>

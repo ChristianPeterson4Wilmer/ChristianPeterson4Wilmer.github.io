@@ -15,6 +15,7 @@
 	<h3 id="help-header"></h3>
 	<p id="help-text"></p>
 </div>
+<div id="background"></div>
 <div id="content">
 	<form class="gform" method="POST" data-email="Christian.Peterson@4wilmer.com" id="changeform"
 	action="https://script.google.com/macros/s/AKfycbxER6RInfQlnR6Xvo7e0VOSgsvRtPgm0tgVuxRM/exec" autocomplete="off">
@@ -25,15 +26,15 @@
 		
 		<h4>Your Information</h4>
 		<span class="line" onmouseenter="displayToolTip(0)" onmouseleave="hideToolTip()"><span class="left-side">First & Last Name</span> <input class="right-side" type="text" name="user-name" id="user-name" required></span> <br />
-		<span class="line" onmouseenter="displayToolTip(1)" onmouseleave="hideToolTip()"><span class="left-side">Email </span><input class="right-side" type="text" name="user-email" required></span> <br />
+		<span class="line" onmouseenter="displayToolTip(1)" onmouseleave="hideToolTip()"><span class="left-side">Email </span><input class="right-side" type="text" name="email" required></span> <br />
 		
 		<br />
-		<h4>Change Information</h4>
-		<span class="line" onmouseEnter="displayToolTip(11)" onmouseleave="hideToolTip()">
-		<span class="left-side">Link to issue</span>
-		<input class="right-side" type="text" name="change-link" required>
-		</span> <br />
 		
+		Link to Issue<br />
+		<span class="line" onmouseenter="displayToolTip(11)" onmouseleave="hideToolTip()">
+		<textarea name="change-link" form="changeform" rows="5" cols="75" required></textarea>
+		</span> <br />
+
 		Change Description<br />
 		<span class="line" onmouseenter="displayToolTip(12)" onmouseleave="hideToolTip()">
 		<textarea name="change-desc" form="changeform" rows="5" cols="75" required></textarea>

@@ -70,9 +70,9 @@ function displayToolTip(key) {
 			break;
 		case 11:
 			headerText = "Link to issue";
-			paragraphText = "Required. Link to the webpage where you encountered this issue. If you found the issue in several places then only 1 link is needed,";
-			paragraphText += " but please mention this in the <i>description</i> section below.<br /><br />";
-			paragraphText += " If a resource needs to be changed please provide the link to the resource.";
+			paragraphText = "Required. Link to the webpage where you encountered this issue. If you found the issue in several places provide as many links as possible";
+			paragraphText += " and please mention this in the <i>description</i> section below.<br /><br />";
+			paragraphText += " If a resource needs to be changed please provide the link to the existing resource and email the new resource using 'Email Related Documents'";
 			paragraphText += " If there are multiple changes that are non-relevant to eachother, please submit multiple forms.";
 			break;
 		case 12:
@@ -84,6 +84,30 @@ function displayToolTip(key) {
 			paragraphText = "If you want to send additional resources (e.g. You want a pdf updated on 4wilmer) You will need to click \'Email Related Documents\'.";
 			paragraphText += " An Outlook email should automatically open where you can attach your additional resources, please replace the body with a small description.";
 			paragraphText += "<br /><br /><b>Requires First & Last Name field be filled out</b>";
+			break;
+		case 14:
+			headerText = "Customer Name";
+			paragraphText ="Primarily for records, but if I ever need to contact the customer this is always helpful.";
+			paragraphText += " If you do not know the customer name then the buisness name is fine.";
+			break;
+		case 15:
+			headerText ="Customer Email";
+			paragraphText = "Primarily for records, but if I ever need to contact the customer this is always helpful.";
+			break;
+		case 16:
+			headerText = "Customer Account Number";
+			paragraphText = "<b>Required only if the issue is related to printplayer or yourwilmer.</b>";
+			paragraphText += "<br/>I usally need the customer account number before I can even begin looking into an issue.";
+			break;
+		case 17:
+			headerText = "Website";
+			paragraphText = "Website which corresponds with the issue. If issue has nothing to do with 4wilmer, yourwilmer, or printplayer";
+			paragraphText += " just select \'NA/Other/Don't Know\'";
+			break;
+		case 18:
+			headerText = "Issue Description";
+			paragraphText = "Please describe the issue as detailed as you possibly can.";
+			break;
 	}
 	
 	document.getElementById('help-header').innerHTML = headerText;

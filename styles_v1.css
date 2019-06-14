@@ -13,6 +13,7 @@ body {
 	background-color: #0B4F6C;
 	background-color: var(--drk-bck-clr);
 }
+
 form {
 	text-align: center;
 }
@@ -77,9 +78,19 @@ div#content {
 
 	display: inline-block;
 	
+
+	text-align: center;
+}
+
+div#background {
+	position:fixed;
+	height: 100%;
+	width: 50%;
+	left: 25%;
+	top: 0;
+
 	background-color: #F4F4F4;
 	background-color: var(--bck-clr);
-	text-align: center;
 }
 
 div#question {
