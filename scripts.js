@@ -106,7 +106,15 @@ function displayToolTip(key) {
 			break;
 		case 18:
 			headerText = "Issue Description";
-			paragraphText = "Please describe the issue as detailed as you possibly can.";
+			paragraphText = "Required. Please describe the issue as detailed as you possibly can.";
+			break;
+		case 21:
+			headerText="Post Date";
+			paragraphText = "Required. The date you want your social media post, posted.";
+			break;
+		case 22:
+			headerText="Social Media Post";
+			paragraphText="Required. The contents of your social media post (aka the text). You will be able to add images after you submit.";
 			break;
 	}
 	
@@ -133,5 +141,32 @@ function generateEmailString(type) {
 	
 	var ret = "mailto:Christian.Peterson@4wilmer.com?subject=" + "[siteupdate] " + type + " : " + username + " Additional documents" + "&body=Attach documents to this email and provide description.";
 	
+	return ret;
+}
+function socialMediaRedirect() {
+	var url = generateSocialMediaEmailString();
+	if (!url || url.length === 0) {
+		return;
+	}
+
+	window.open(url);
+}
+function generateSocialMediaEmailString() {
+	var username = document.getElementById('user-name').value;
+	var email = document.getElementById('email').value;
+	var postdate = document.getElementById('post-date').value;
+	var post = document.getElementById('post-text').value;
+
+	var arr = [username, email, postdate, post];
+
+	for (var i = 0; i < arr.length; i++) {
+		if (!arr[i] || arr[i].length === 0) {
+			alert("All fields are required!");
+			return "";
+		}
+	}
+
+	var ret = "mailto:Christian.Peterson@4wilmer.com?subject=[SocialMedia] " + postdate + "&body=[PostText] " + post;
+
 	return ret;
 }

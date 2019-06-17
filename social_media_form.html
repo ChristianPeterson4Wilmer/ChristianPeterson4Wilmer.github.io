@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="description" content="4wilmer New Product Request Form">
+	<title>Social Media Scheduler</title>
+	
+	<link rel="stylesheet" type="text/css" href="styles_v1.css">
+	<script src="scripts.js"></script>
+</head>
+<body onload="load()">
+<div class="help" id="help-tooltip">
+	<h3 id="help-header"></h3>
+	<p id="help-text"></p>
+</div>
+<div id="background"></div>
+<div id="content">
+    <form class="gform" method="POST" data-email="Christian.Peterson@4wilmer.com" id="socialform"
+    action="" autocomplete="off">
+        <h2>Social Media Form</h2>
+		<p id="info">Scheduling a social media post is simple. Fill out the all text fields of this form, when you click submit your
+            email will be auto generated and popup. At this point attach the corresponding images to the social media post and send your email.
+            If you need <b>Help</b> hover your mouse over any entry to get a brief description. 
+        </p>
+		<span class="line" onmouseenter="displayToolTip(0)" onmouseleave="hideToolTip()"><span class="left-side">First & Last Name</span> <input class="right-side" type="text" name="user-name" id="user-name" required></span> <br />
+        <span class="line" onmouseenter="displayToolTip(1)" onmouseleave="hideToolTip()"><span class="left-side">Email </span><input class="right-side" type="text" name="email" id="email" required></span> <br />
+        <span class="line" onmouseenter="displayToolTip(21)" onmouseleave="hideToolTip()"><span class="left-side">Post Date</span><input class="right-side" type="date" name="post-date" id="post-date" required></span><br />
+
+        Social Media Post<br />
+        <span class="line" onmouseenter="displayToolTip(22)" onmouseleave="hideToolTip()">
+        <textarea name="post-text" form="socialform" id="post-text" rows="5" cols="75" required></textarea>
+        </span>
+        <br />
+        <input type="button" value="Submit" onclick="socialMediaRedirect()">
+    </form>
+</div>
+</body>
+</html>
