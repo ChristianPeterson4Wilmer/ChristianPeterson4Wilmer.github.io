@@ -116,6 +116,32 @@ function displayToolTip(key) {
 			headerText="Social Media Post";
 			paragraphText="Required. The contents of your social media post (aka the text). You will be able to add images after you submit.";
 			break;
+		case 32:
+			headerText="Product Group Name";
+			paragraphText="Required. The name of the Product Group.";
+			break;
+		case 33:
+			headerText="Product Group Image";
+			paragraphText="Required. Image that will be used to display the product group. Click \'Email Images\' to send image.";
+			paragraphText += " An Outlook email should automatically open where you can attach your additional resources, please replace the body with a small description.";
+			paragraphText += "<br /><br /><b>Requires First & Last Name field be filled out</b>";
+			break;
+		case 34:
+			headerText="Product Group Catergory";
+			paragraphText="Required. Each product must be a part of a catergory, if the product is not part of \'Healthcare\' or \'Financial Markets\' then just leave \'All Markets\' selected";
+			break;
+		case 35:
+			headerText="New Product Group Description";
+			paragraphText="Required. Descrption that displays with the list of products which describes the Product Group.";
+			break;
+		case 36:
+			headerText="Products in Product Group";
+			paragraphText="Required. Please list all the Products that will be in this Product Group.";
+			break;
+		case 37:
+			headerText="Links to Additional Resources";
+			paragraphText="Some Product Groups have other links to other Resources (usually in the Resource Library) that are added to the description.";
+			break;
 	}
 	
 	document.getElementById('help-header').innerHTML = headerText;
