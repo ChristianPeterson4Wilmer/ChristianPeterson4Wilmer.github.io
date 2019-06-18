@@ -1,17 +1,40 @@
 :root {
-	--bck-clr: #F4F4F4;
-	--drk-bck-clr: #0B4F6C;
-	--gry-bck-clr: #eaeaea;
+	--bck-clr: #f9f9f9;
+	--drk-bck-clr: #7F8688;
 	
-	--hlight-clr: #01BAEF;
+	--text-clr-a: #2b2b2b;
+	--text-clr-h: #01BAEF;
+	--text-clr-l: #01BAEF;
+
+	--hlight-clr: #3d3d3d;
 }
 
 body {
 	font-family: Verdana, Arial, Courier, Helvetica, sans-serif;
 	font-size: 14px;
 
-	background-color: #0B4F6C;
+	background-color: #7F8688;
+	color: #2b2b2b;
 	background-color: var(--drk-bck-clr);
+}
+
+div#home {
+	position: fixed;
+	top: 0px;
+	left: 2%;
+	text-align: center;
+}
+
+a {
+	text-decoration: underline;
+	color: #01BAEF;
+	color: var(--text-clr-l);
+}
+
+a:hover {
+	font-weight: bold;
+	text-shadow: #3d3d3d 0px 0px 1px;
+	cursor: pointer;
 }
 
 form {
@@ -37,7 +60,8 @@ form {
 }
 
 input[type=text] {
-	border-color: #01BAEF;
+	border: 2px solid;
+	border-color: #3d3d3d;
 	border-color: var(--hlight-clr);
 	width: 300px;
 }
@@ -54,7 +78,7 @@ input[type=submit] {
 	padding-bottom: 5px;
 	margin-bottom: 5%;
 	
-	border-color: #01BAEF;
+	border-color: #3d3d3d;
 	border-color: var(--hlight-clr);
 }
 
@@ -65,7 +89,8 @@ input[type=submit]:hover {
 textarea {
 	position: relative;
 
-	border-color: #01BAEF;
+	border-color: #3d3d3d;
+	border: 2px solid;
 	border-color: var(--hlight-clr);
 }
 
@@ -89,22 +114,28 @@ div#background {
 	left: 25%;
 	top: 0;
 
-	background-color: #F4F4F4;
+	border-right: 1px solid #3d3d3d;
+	border-left: 1px solid #3d3d3d;
+
+	background-color: #f9f9f9;
 	background-color: var(--bck-clr);
 }
 
 div#question {
 	padding: 4px;
-	margin-bottom: 5%;
-	background-color: #eaeaea;
-	background-color: var(--gry-bck-clr);
+	color: #2b2b2b;
+	color: var(--text-clr-a);
+	text-decoration: none;
+	
 }
 
-div#home {
-	position: fixed;
-	top: 0px;
-	left: 2%;
-	text-align: center;
+div#question:hover {
+	margin-top: 6px;
+	margin-bottom: 6px;
+	margin-left: 0;
+	margin-right: 0;
+	color: #01BAEF;
+	color: var(--text-clr-h);
 }
 
 .credit {
@@ -118,12 +149,14 @@ div#home {
 
 #help-tooltip {
 	visibility: hidden;
+	color: #2b2b2b;
+	color: var(--text-clr-a);
 }
 
 .help {
-	background-color: #F4F4F4;
+	background-color: #f9f9f9;
 	background-color: var(--bck-clr);
-	border-color: #01BAEF;
+	border-color: #3d3d3d;
 	border: 1px solid var(--hlight-clr);
 	border-radius: 10px;
 	position: fixed;
@@ -137,14 +170,3 @@ p#info {
 	padding: 12px;
 }
 
-a {
-	text-decoration: none;
-	color: #01BAEF;
-	color: var(--hlight-clr);
-}
-
-a:hover {
-	font-weight: bold;
-	text-shadow: black 0px 0px 1px;
-	cursor: pointer;
-}

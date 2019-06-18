@@ -6,10 +6,11 @@
 	<meta name="description" content="4wilmer New Product Request Form">
 	<title>New Product Request</title>
 	
-	<link rel="stylesheet" type="text/css" href="styles_v1.css">
-	<script src="scripts.js"></script>
+	<link rel="stylesheet" type="text/css" href="../styles_v1.css">
+    <script src="../scripts.js"></script>
+    <script src="tooltips.js"></script>
 </head>
-<body onload="load()">
+<body onload="load('../index.html')">
 <div class="help" id="help-tooltip">
 	<h3 id="help-header"></h3>
 	<p id="help-text"></p>
@@ -22,7 +23,7 @@
 		<h3><i>New Product Request</i></h3>
 		<p id="info">Product Request Forms are required for each individual product. If these are assosciated with a new product group please additionally fill out the "New Product Group Form"
 		as well. If you need <b>Help</b> hover your mouse over any entry to get a brief description. 
-		If you'd like to see what a product page looks like <a href="img/img_newprodexample.png" target="_blank">Click Here</a>.</p>
+		If you'd like to see what a product page looks like <a href="../img/img_newprodexample.png" target="_blank">Click Here</a>.</p>
 	
 		<h4>Your Information</h4>
 		<span class="line" onmouseenter="displayToolTip(0)" onmouseleave="hideToolTip()"><span class="left-side">First & Last Name</span> <input class="right-side" type="text" name="user-name" id="user-name" required></span> <br />
