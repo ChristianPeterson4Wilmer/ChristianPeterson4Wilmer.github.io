@@ -6,7 +6,26 @@ body {
 body#homepage {
     background-color: #0047ab;
 }
-
+div#homelink {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 150px;
+    height: 150px;
+    font-size: 48px;
+    text-align: center;
+    color: lightgray;
+}
+div#homelink:hover {
+    color: black;
+    background-color: lightgray;
+    border: outset 1px black;
+    cursor: pointer;
+}
+span#homelink {
+    position: relative;
+    top: 25%;
+}
 div#header {
     position: absolute;
     display: block;
@@ -60,4 +79,60 @@ h2#question {
 }
 h3 {
     color: white;
+}
+form#salesrepsearch {
+    position: relative;
+    width: 480px;
+    margin: auto;
+    margin-top: 200px;
+}
+input.salesrepsearch {
+    text-align: center;
+    margin-bottom: 24px;
+    font-size: 32px;
+    width: 480px;
+    height: 40px;
+    border-radius: 10px;
+}
+label#salesrepsearch {
+    position: relative;
+    text-align: center;
+    width: 480px;
+    color: white;
+}
+button.salesrepsearch {
+    width: 100px;
+    height: 35px;
+    position: relative;
+    float: right;
+    border-color: white;
+    background-color: lightgray;
+    border-style: outset;
+    cursor: pointer;
+}
+button#salesrepsearch:hover {
+    border-style: inset;
+}
+div#salesrep_output {
+    position: relative;
+    width: 80%;
+    top: 100px;
+    text-align: center;
+    color: white;
+    font-size: 24px;
+    margin: auto;
+}
+h3#salesrep_output {
+    text-decoration: underline;
+    text-align: center;
+    margin: auto;
+    width: 250px;
+}
+ul#outputlist {
+    padding-left: 20%;
+    text-align: left;
+}
+li {
+    margin-top: 12px;
+    text-align: center;
 }

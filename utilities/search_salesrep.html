@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="description" content="Search Wilmer Sales Representatives">
+
+        <title>Sales Rep Search</title>
+
+        <script>
+            function redirect(path) {
+                window.location.href = path;
+            }
+    
+            function loadCss(browser, prePath) {
+                var link = document.createElement('link');
+                link.rel = "stylesheet";
+                link.type = "text/css";
+                link.href = prePath;
+                if (browser === "Netscape") {
+                    link.href += "netscape_css_v1.css";
+                }
+                else {
+                    link.href += "other_css_v1.css";
+                }
+    
+                document.getElementsByTagName('HEAD')[0].appendChild(link);
+            }
+    
+            function load() {
+                var browser = window.navigator.appName; // check name of browser, to determine whether to use netscape css or not
+                loadCss(browser, "../css/");
+            }
+    
+        </script>
+    </head>
+    <body onload="load()" id="homepage">
+        <script src="scripts/SalesRepSearch.js"></script>
+        <div id="header">
+            <h1>Technical Marketing Specialist</h1>
+               <h2><i>Sales Representative Search</i></h2>
+               <p>This utility is still in testing phase, please double check using <i>Territory Assigment</i> Document.</p>
+               <br />
+        </div>
+        <div id="homelink" onclick="redirect('../index.html')">
+            <span id="homelink">HOME</span>
+        </div>
+       
+        <form id="salesrepsearch">
+            <label id="salesrepsearch">State or State Initials (e.g Ohio is OH): <br/></label>
+            <input class="salesrepsearch" id="state_text" type="text" name="statename"><br />
+            <label id="salesrepsearch">First 3 Digits of Zipcode (optional): <br/></label>
+            <input class="salesrepsearch" id="zipcode" type="text" name="zipcodes">
+            <button type="button" id="button" class="salesrepsearch" onclick="buttonClick()">Search</button>
+        </form>
+
+        <div id="salesrep_output">
+            <h3 id="salesrep_output">Results </h2>
+            <ul id="outputlist">
+
+            </ul>
+        </div>
+
+        <script>
+                var state = document.getElementById('state_text');
+                var zip = document.getElementById('zipcode');
+                state.addEventListener("keyup", function(event) {
+                    if (event.keyCode === 13) {
+                        event.preventDefault();
+                        document.getElementById('button').click();
+                    }
+                });
+                zip.addEventListener("keyup", function(event) {
+                    if (event.keyCode === 13) {
+                        event.preventDefault();
+                        document.getElementById('button').click();
+                    }
+                })
+    
+                function buttonClick() {
+                    var stateField = document.getElementById('state_text');
+                    var zipField = document.getElementById('zipcode');
+                    var list;
+    
+                    if (stateField.value.length < 2) {
+                        alert("Please Supply a State name or Initial.");
+                        return;
+                    }
+    
+                    if (zipField.value.length > 3) {
+                        alert('Please only supply the first 3 digits of zip code.')
+                        return;
+                    }
+                    if (zipField.value.length === 3) {
+                        list = searchSalesRep(stateField.value, zipField.value);
+                    }
+                    else {
+                        list = searchSalesRep(stateField.value);
+                    }
+
+                    document.getElementById('outputlist').innerHTML = "";
+                    for (let i = 0; i < list.length; i++) {
+                        var node = document.createElement("LI");
+                        node.appendChild(document.createTextNode(list[i].fullname() + " | " + list[i].email()));
+                        document.getElementById('outputlist').appendChild(node);
+                    }
+                }
+            </script>
+    </body>
+</html>
