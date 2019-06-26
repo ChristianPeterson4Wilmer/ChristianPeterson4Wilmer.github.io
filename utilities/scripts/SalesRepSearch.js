@@ -281,9 +281,6 @@ var SalesRep = {
         states : [State.AK, State.AZ, State.CA, State.CO, State.HI, State.ID, State.MT, State.NV, State.OR, State.UT, State.WA, State.IL, State.WY],
         fullname : function() {
             return this.firstName + " " + this.lastName;
-        },
-        email : function() {
-            return this.firstName + "." + this.lastName + "@4wilmer.com";
         }
     },
     MENKER : {
@@ -292,9 +289,6 @@ var SalesRep = {
         states : [State.IL_Menker, State.IN_MENKER, State.KY, State.MI_MENKER, State.OH, State.PA_MENKER, State.TN_MENKER, State.WV],
         fullname : function() {
             return this.firstName + " " + this.lastName;
-        },
-        email : function() {
-            return this.firstName + "." + this.lastName + "@4wilmer.com";
         }
     },
     OSTERHOLT : {
@@ -303,9 +297,6 @@ var SalesRep = {
         states : [State.FL, State.PR],
         fullname : function() {
             return this.firstName + " " + this.lastName;
-        },
-        email : function() {
-            return this.firstName + "." + this.lastName + "@4wilmer.com";
         }
     },
     SCHROEDER : {
@@ -314,9 +305,6 @@ var SalesRep = {
         states : [State.IA, State.IL_SCHROEDER, State.IN_SCHROEDER, State.MI_SCHROEDER, State.MN, State.NE, State.ND, State.SD, State.WI],
         fullname : function() {
             return this.firstName + " " + this.lastName;
-        },
-        email : function() {
-            return this.firstName + "." + this.lastName + "@4wilmer.com";
         }
     },
     STALKER : {
@@ -325,9 +313,6 @@ var SalesRep = {
         states : [State.AL, State.GA, State.MS, State.NC, State.SC, State.TN_STALKER],
         fullname : function() {
             return this.firstName + " " + this.lastName;
-        },
-        email : function() {
-            return this.firstName + "." + this.lastName + "@4wilmer.com";
         }
     },
     TECHTMANN : {
@@ -336,9 +321,6 @@ var SalesRep = {
         states : [State.CT, State.DC, State.DE, State.MA, State.MD, State.ME, State.NH, State.NJ, State.NY, State.PA_TECHTMANN, State.RI, State.VA, State.VT],
         fullname : function() {
             return this.firstName + " " + this.lastName;
-        },
-        email : function() {
-            return this.firstName + "." + this.lastName + "@4wilmer.com";
         }
     },
     TRAVERS: {
@@ -347,9 +329,6 @@ var SalesRep = {
         states : [State.AR, State.KS, State.LA, State.MO, State.NM, State.OK, State.TX],
         fullname : function() {
             return this.firstName + " " + this.lastName;
-        },
-        email : function() {
-            return this.firstName + "." + this.lastName + "@4wilmer.com";
         }
     },
 }
@@ -394,8 +373,8 @@ function searchSalesRep(stateNameOrInitial, zipCode = -1) {
     }
     var list = "";
     for (let i = 0; i < matchingList.length; i++) {
-        list += matchingList[i].fullname() + " " + matchingList[i].email() + "\n";
-        console.log(matchingList[i].fullname() + " " + matchingList[i].email());
+        list += matchingList[i].fullname() + "\n";
+        console.log(matchingList[i].fullname());
     }
 
     return matchingList;

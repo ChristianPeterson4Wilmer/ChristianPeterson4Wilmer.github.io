@@ -101,7 +101,7 @@
                     document.getElementById('outputlist').innerHTML = "";
                     for (let i = 0; i < list.length; i++) {
                         var node = document.createElement("LI");
-                        node.appendChild(document.createTextNode(list[i].fullname() + " | " + list[i].email()));
+                        node.appendChild(document.createTextNode(list[i].fullname()));
                         document.getElementById('outputlist').appendChild(node);
                     }
                 }
