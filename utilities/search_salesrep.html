@@ -47,11 +47,11 @@
             <span id="homelink">HOME</span>
         </div>
        
-        <form id="salesrepsearch">
+        <form id="salesrepsearch" autocomplete="off">
             <label id="salesrepsearch">State or State Initials (e.g Ohio is OH): <br/></label>
-            <input class="salesrepsearch" id="state_text" type="text" name="statename"><br />
+            <input class="salesrepsearch" id="state_text" type="text" name="statename" autcomplete="off_1"><br />
             <label id="salesrepsearch">First 3 Digits of Zipcode (optional): <br/></label>
-            <input class="salesrepsearch" id="zipcode" type="text" name="zipcodes">
+            <input class="salesrepsearch" id="zipcode" type="text" name="zipcodes" autocomplete="off_2">
             <button type="button" id="button" class="salesrepsearch" onclick="buttonClick()">Search</button>
         </form>
 
@@ -89,8 +89,7 @@
                     }
     
                     if (zipField.value.length > 3) {
-                        alert('Please only supply the first 3 digits of zip code.')
-                        return;
+                        zipField.value = zipField.value.substring(0,3);
                     }
                     if (zipField.value.length === 3) {
                         list = searchSalesRep(stateField.value, zipField.value);

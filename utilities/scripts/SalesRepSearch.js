@@ -274,61 +274,69 @@ var SalesRep = {
     firstName: "err",
     lastName: "err",
     states: null,
+    territory: "0000",
 
     JACKSON : {
         firstName : "Thomas",
         lastName : "Jackson",
         states : [State.AK, State.AZ, State.CA, State.CO, State.HI, State.ID, State.MT, State.NV, State.OR, State.UT, State.WA, State.IL, State.WY],
+        territory: "8924",
         fullname : function() {
-            return this.firstName + " " + this.lastName;
+            return this.firstName + " " + this.lastName + " (T: " + this.territory + " )";
         }
     },
     MENKER : {
         firstName : "Robert",
         lastName : "Menker",
+        territory : "5264",
         states : [State.IL_Menker, State.IN_MENKER, State.KY, State.MI_MENKER, State.OH, State.PA_MENKER, State.TN_MENKER, State.WV],
         fullname : function() {
-            return this.firstName + " " + this.lastName;
+            return this.firstName + " " + this.lastName + " (T: " + this.territory + " )";
         }
     },
     OSTERHOLT : {
         firstName : "Richard",
         lastName : "Osterholt",
         states : [State.FL, State.PR],
+        territory : "3924",
         fullname : function() {
-            return this.firstName + " " + this.lastName;
+            return this.firstName + " " + this.lastName + " (T: " + this.territory + " )";
         }
     },
     SCHROEDER : {
         firstName : "Eric",
         lastName : "Schroeder",
         states : [State.IA, State.IL_SCHROEDER, State.IN_SCHROEDER, State.MI_SCHROEDER, State.MN, State.NE, State.ND, State.SD, State.WI],
+        territory : "5624",
         fullname : function() {
-            return this.firstName + " " + this.lastName;
+            return this.firstName + " " + this.lastName + " (T: " + this.territory + " )";
         }
     },
     STALKER : {
         firstName : "Greg",
         lastName : "Stalker",
         states : [State.AL, State.GA, State.MS, State.NC, State.SC, State.TN_STALKER],
+        territory : "3627",
         fullname : function() {
-            return this.firstName + " " + this.lastName;
+            return this.firstName + " " + this.lastName + " (T: " + this.territory + " )";
         }
     },
     TECHTMANN : {
         firstName : "Jack",
         lastName : "Techtmann",
         states : [State.CT, State.DC, State.DE, State.MA, State.MD, State.ME, State.NH, State.NJ, State.NY, State.PA_TECHTMANN, State.RI, State.VA, State.VT],
+        territory : "1455",
         fullname : function() {
-            return this.firstName + " " + this.lastName;
+            return this.firstName + " " + this.lastName + " (T: " + this.territory + " )";
         }
     },
     TRAVERS: {
         firstName : "Mark",
         lastName : "Travers",
         states : [State.AR, State.KS, State.LA, State.MO, State.NM, State.OK, State.TX],
+        territory : "7224",
         fullname : function() {
-            return this.firstName + " " + this.lastName;
+            return this.firstName + " " + this.lastName + " (T: " + this.territory + " )";
         }
     }
 }
