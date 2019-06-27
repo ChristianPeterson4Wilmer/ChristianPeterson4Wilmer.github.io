@@ -49,7 +49,7 @@ var State = {
     },
     HI : {
         name : "Hawaii",
-        intial : "HI"
+        initial : "HI"
     },
     ID : {
         name : "Idaho",
@@ -279,7 +279,7 @@ var SalesRep = {
     JACKSON : {
         firstName : "Thomas",
         lastName : "Jackson",
-        states : [State.AK, State.AZ, State.CA, State.CO, State.HI, State.ID, State.MT, State.NV, State.OR, State.UT, State.WA, State.IL, State.WY],
+        states : [State.AK, State.AZ, State.CA, State.CO, State.HI, State.ID, State.MT, State.NV, State.OR, State.UT, State.WA, State.WY],
         territory: "8924",
         fullname : function() {
             return this.firstName + " " + this.lastName + " (T: " + this.territory + " )";
@@ -348,7 +348,7 @@ function searchSalesRep(stateNameOrInitial, zipCode) {
     var matchingList = [];
     for (var i = 0; i < SalesRepList.length; i++) {
         var rep = SalesRepList[i];
-        console.log(rep);
+        //console.log(rep);
 
         for (var j = 0; j < rep.states.length; j++) {
             var state = rep.states[j];
