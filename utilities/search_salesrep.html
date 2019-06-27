@@ -17,6 +17,7 @@
                 link.rel = "stylesheet";
                 link.type = "text/css";
                 link.href = prePath;
+                alert(browser);
                 if (browser === "Netscape") {
                     link.href += "netscape_css_v1.css";
                 }
@@ -95,11 +96,11 @@
                         list = searchSalesRep(stateField.value, zipField.value);
                     }
                     else {
-                        list = searchSalesRep(stateField.value);
+                        list = searchSalesRep(stateField.value, -1);
                     }
 
                     document.getElementById('outputlist').innerHTML = "";
-                    for (let i = 0; i < list.length; i++) {
+                    for (var i = 0; i < list.length; i++) {
                         var node = document.createElement("LI");
                         node.appendChild(document.createTextNode(list[i].fullname()));
                         document.getElementById('outputlist').appendChild(node);

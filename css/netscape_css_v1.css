@@ -129,10 +129,9 @@ h3#salesrep_output {
     width: 250px;
 }
 ul#outputlist {
-    padding-left: 20%;
     text-align: left;
+    padding-left: 40%;
 }
 li {
     margin-top: 12px;
-    text-align: center;
 }

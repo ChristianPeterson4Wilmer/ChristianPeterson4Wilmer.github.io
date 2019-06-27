@@ -330,24 +330,24 @@ var SalesRep = {
         fullname : function() {
             return this.firstName + " " + this.lastName;
         }
-    },
+    }
 }
 
 var SalesRepList = [SalesRep.JACKSON, SalesRep.MENKER, SalesRep.OSTERHOLT, SalesRep.SCHROEDER, SalesRep.STALKER, SalesRep.TECHTMANN, SalesRep.TRAVERS];
 
-function searchSalesRep(stateNameOrInitial, zipCode = -1) {
-    let count = 0;
+function searchSalesRep(stateNameOrInitial, zipCode) {
+    var count = 0;
     var matchingList = [];
-    for (let i = 0; i < SalesRepList.length; i++) {
-        let rep = SalesRepList[i];
+    for (var i = 0; i < SalesRepList.length; i++) {
+        var rep = SalesRepList[i];
         console.log(rep);
 
-        for (let j = 0; j < rep.states.length; j++) {
-            let state = rep.states[j];
+        for (var j = 0; j < rep.states.length; j++) {
+            var state = rep.states[j];
             //console.log(state.zipcodes);
             if(stateNameOrInitial.toUpperCase() === state.name.toUpperCase() 
             || stateNameOrInitial.toUpperCase() === state.initial) {
-                let stateZips = state.zipcodes;
+                var stateZips = state.zipcodes;
                 if (stateZips === null || zipCode === -1 || stateZips === undefined) {
                     //console.log("MATCH");
                     matchingList[count] = rep;
@@ -372,7 +372,7 @@ function searchSalesRep(stateNameOrInitial, zipCode = -1) {
         }
     }
     var list = "";
-    for (let i = 0; i < matchingList.length; i++) {
+    for (var i = 0; i < matchingList.length; i++) {
         list += matchingList[i].fullname() + "\n";
         console.log(matchingList[i].fullname());
     }
