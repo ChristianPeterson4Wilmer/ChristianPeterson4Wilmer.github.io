@@ -4,38 +4,11 @@
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<meta name="description" content="Technical Marketing Specialist Hub">
-	
 	<title>Technical Marketing Specialist Hub</title>
-	<script>
-	
-		function redirect(path) {
-			window.location.href = path;
-		}
-
-		function loadCss(browser, prePath) {
-			var link = document.createElement('link');
-			link.rel = "stylesheet";
-			link.type = "text/css";
-			link.href = prePath;
-			if (browser === "Netscape") {
-				link.href += "netscape_css_v1.css";
-			}
-			else {
-				link.href += "other_css_v1.css";
-			}
-
-			document.getElementsByTagName('HEAD')[0].appendChild(link);
-		}
-
-		function load() {
-			var browser = window.navigator.appName; // check name of browser, to determine whether to use netscape css or not
-			loadCss(browser, "./css/");
-		}
-
-	</script>
 </head>
 
 <body onload="load()" id="homepage">
+
 <div id="background"></div>	
 <div id="header">
 	<h1>Technical Marketing Specialist</h1>
@@ -43,41 +16,72 @@
 	   <br />
    </div>
 <div id="tilepage">
-	<h3><i>4wilmer.com Site Updates</i></h3>
+	<div id="siteupdates">
+		<h3><i>4wilmer.com Site Updates</i></h3></div>
 
-	<div id="question" onclick="redirect('forms/new_product_form.html')">
-		<h2 id="question">Add a new product to 4wilmer.com</h2>
-	</div>
+	<div id="requests" style="margin-top: 5%;">
+		<h3 id="breakup"><i>Requests</i></h3></div>
 
-	<div id="question" onclick="redirect('forms/new_group_form.html')">
-		<h2 id="question">Add a new line of products to 4wilmer.com</h2>
-	</div>
-
-	<div id="question" onclick="redirect('forms/change_form.html')">
-		<h2 id="question">Change something on 4wilmer.com</h2>
-	</div>
-
-	<br />
-	<br />
-	<br />
-	<h3 id="breakup"><i>Requests</i></h3>
-	<div id="question" onclick="redirect('forms/request_help.html')">
-		<h2 id="question">I need help answering a tech, or website, related question</h2>
-	</div>
-	<div id="question" onclick="redirect('forms/social_media_form.html')">
-		<h2 id="question">I need to schedule a social media post</h2>
-	</div>
-	<br />
-	<br />
-	<br />
-	<h3 id="breakup"><i>Utilities</i></h3>
-	<div id="question" onclick="redirect('utilities/search_salesrep.html')"><h2 id="question"><br />Search Sales Reps</h2></div>
-	<br />
-	<br />
-	<br />
-	
-	
+	<div id="utilities" style="margin-top: 5%;">
+		<h3 id="breakup"><i>Utilities</i></h3></div>
 </div>
+
+
+<script>
+function redirect(path) {
+	window.location.href = path;
+}
+
+function loadCss(browser, prePath) {
+	var link = document.createElement('link');
+	link.rel = "stylesheet";
+	link.type = "text/css";
+	link.href = prePath;
+	if (browser === "Netscape") {
+		link.href += "netscape_css_v1.css";
+	}
+	else {
+		link.href += "other_css_v1.css";
+	}
+
+	document.getElementsByTagName('HEAD')[0].appendChild(link);
+}
+
+function load() {
+	var browser = window.navigator.appName; // check name of browser, to determine whether to use netscape css or not
+	loadCss(browser, "./css/");
+
+	generateButtonInSection("siteupdates", "Add a new product to 4wilmer.com", "redirect('forms/new_product_form.html')");
+	generateButtonInSection("siteupdates", "Add a new line of products to 4wilmer.com", "redirect('forms/new_group_form.html')");
+	generateButtonInSection("siteupdates", "Change something on 4wilmer.com", "redirect('forms/change_form.html')");
+
+	generateButtonInSection("requests", "I need help answering a tech or website related question", "redirect('forms/request_help.html')");
+	generateButtonInSection("requests", "I need to schedule a social media post", "redirect('forms/social_media_form.html')");
+
+	generateButtonInSection("utilities", "Search Sales Reps", "redirect('utilities/search_salesrep.html')");
+}
+
+function generateButtonInSection(sectionName, text, clickAction) {
+	var div = document.createElement('div');
+	div.setAttribute("id", "question");
+	div.setAttribute("onclick", clickAction);
+
+	var h2 = document.createElement('h2');
+	h2.setAttribute("id", "question");
+	h2.appendChild(document.createTextNode(text));
+	div.appendChild(h2);
+	document.getElementById(sectionName).appendChild(div);
+
+	var browser = window.navigator.appName;
+	if (browser !== "Netscape") {
+		var hardlink = document.createElement('a');;
+		hardlink.setAttribute("href", clickAction.split("'")[1]);
+		div.appendChild(hardlink);
+		hardlink.appendChild(h2);
+	}
+}
+</script>
+
 </body>
 
 </html>

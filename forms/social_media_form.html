@@ -6,35 +6,96 @@
 	<meta name="description" content="4wilmer New Product Request Form">
 	<title>Social Media Scheduler</title>
 	
-	<link rel="stylesheet" type="text/css" href="../styles_v1.css">
-    <script src="../scripts.js"></script>
-    <script src="tooltips.js"></script>
+    <script>
+            function redirect(path) {
+                window.location.href = path;
+            }
+    
+            function loadCss(browser, prePath) {
+                var link = document.createElement('link');
+                link.rel = "stylesheet";
+                link.type = "text/css";
+                link.href = prePath;
+                //alert(browser);
+                if (browser === "Netscape") {
+                    link.href += "netscape_css_v1.css";
+                }
+                else {
+                    link.href += "other_css_v1.css";
+                }
+    
+                document.getElementsByTagName('HEAD')[0].appendChild(link);
+            }
+    
+            function load() {
+                var browser = window.navigator.appName; // check name of browser, to determine whether to use netscape css or not
+                loadCss(browser, "../css/");
+            }
+    
+        </script>
 </head>
-<body onload="load('../index.html')">
-<div class="help" id="help-tooltip">
-	<h3 id="help-header"></h3>
-	<p id="help-text"></p>
+<body onload="load()" id="homepage">
+
+<div id="header" style="height: 160px;">
+        <h1>Technical Marketing Specialist</h1>
+           <h2><i>Social Media Scheduling Form</i></h2>
+           <p style="width: 70%; margin: auto;">Fill out this form to schedule a social media post. When you have completed the form and hit "submit" an email
+               will be auto-generated for you to attach corresponding images or additional information.
+           </p>
 </div>
-<div id="background"></div>
+
+<div id="homelink" onclick="redirect('../index.html')" style="width: 160px; height: 160px;">
+    <span id="homelink">HOME</span>
+</div>
+
 <div id="content">
     <form class="gform" method="POST" data-email="Christian.Peterson@4wilmer.com" id="socialform"
     action="https://script.google.com/macros/s/AKfycbzbEeRj3aC9F1lmISR8awwruzqRG4YGC50EsNCFiIWHnBBbiZA/exec" autocomplete="off">
-        <h2>Social Media Form</h2>
-		<p id="info">Scheduling a social media post is simple. Fill out the all text fields of this form, when you click submit your
-            email will be auto generated and popup. At this point attach the corresponding images to the social media post and send your email.
-            If you need <b>Help</b> hover your mouse over any entry to get a brief description. 
-        </p>
-		<span class="line" onmouseenter="displayToolTip(0)" onmouseleave="hideToolTip()"><span class="left-side">First & Last Name</span> <input class="right-side" type="text" name="user-name" id="user-name" required></span> <br />
-        <span class="line" onmouseenter="displayToolTip(1)" onmouseleave="hideToolTip()"><span class="left-side">Email </span><input class="right-side" type="text" name="email" id="email" required></span> <br />
-        <span class="line" onmouseenter="displayToolTip(21)" onmouseleave="hideToolTip()"><span class="left-side">Post Date</span><input class="right-side" type="date" name="post-date" id="post-date" required></span><br />
+        <label id="basicform">First & Last Name<br /></label>
+        <input class="basicform" type="text" name="user-name" id="user-name" required> <br />
 
-        Social Media Post<br />
-        <span class="line" onmouseenter="displayToolTip(22)" onmouseleave="hideToolTip()">
-        <textarea name="post-text" form="socialform" id="post-text" rows="5" cols="75" required></textarea>
-        </span>
-        <br />
-        <input type="button" value="Submit" onclick="socialMediaRedirect()">
+        <label id="basicform">Email<br /></label>
+        <input class="basicform" type="text" name="email" id="email" required><br />
+
+        <label id="basicform">Post Date<br /></label>
+        <input class="basicform" type="date" name="post-date" id="post-date" style="text-align: left;" required></span><br />
+
+        <label id="basicform">Social Media Post<br /></label>
+        <textarea class="basicform" name="post-text" form="socialform" id="post-text" rows="5" cols="75" required></textarea>
+
+        <button type="button" value="Submit" class="basicform" onclick="socialMediaRedirect()">Submit</button>
     </form>
 </div>
+
+<script>
+function socialMediaRedirect() {
+	var url = generateSocialMediaEmailString();
+	if (!url || url.length === 0) {
+		return;
+	}
+
+	window.open(url);
+}
+function generateSocialMediaEmailString() {
+	var username = document.getElementById('user-name').value;
+	var email = document.getElementById('email').value;
+	var postdate = document.getElementById('post-date').value;
+	var post = document.getElementById('post-text').value;
+
+	var arr = [username, email, postdate, post];
+
+	for (var i = 0; i < arr.length; i++) {
+		if (!arr[i] || arr[i].length === 0) {
+			alert("All fields are required!");
+			return "";
+		}
+	}
+
+	var ret = "mailto:Christian.Peterson@4wilmer.com?subject=[SocialMedia] " + postdate + "&body=[PostText] " + post;
+
+    document.getElementById('socialform').reset();
+	return ret;
+}
+</script>
 </body>
 </html>

@@ -86,7 +86,7 @@ form#salesrepsearch {
     margin: auto;
     margin-top: 200px;
 }
-input.salesrepsearch {
+input.basicform {
     text-align: center;
     margin-bottom: 24px;
     font-size: 32px;
@@ -94,13 +94,21 @@ input.salesrepsearch {
     height: 40px;
     border-radius: 10px;
 }
-label#salesrepsearch {
+textarea.basicform {
+    text-align: left;
+    margin-bottom: 24px;
+    font-size: 20px;
+    width: 480px;
+    height: 160px;
+    border-radius: 10px;
+}
+label#basicform {
     position: relative;
     text-align: center;
     width: 480px;
     color: white;
 }
-button.salesrepsearch {
+button.basicform{
     width: 100px;
     height: 35px;
     position: relative;
@@ -129,4 +137,10 @@ ul#outputlist {
 }
 li {
     margin-top: 12px;
+}
+form#socialform {
+    position: relative;
+    width: 480px;
+    margin: auto;
+    margin-top: 200px;
 }

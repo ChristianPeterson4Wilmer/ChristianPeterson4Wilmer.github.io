@@ -48,11 +48,11 @@
         </div>
        
         <form id="salesrepsearch" autocomplete="off">
-            <label id="salesrepsearch">State or State Initials (e.g Ohio is OH): <br/></label>
-            <input class="salesrepsearch" id="state_text" type="text" name="statename" autcomplete="off_1"><br />
-            <label id="salesrepsearch">First 3 Digits of Zipcode (optional): <br/></label>
-            <input class="salesrepsearch" id="zipcode" type="text" name="zipcodes" autocomplete="off_2">
-            <button type="button" id="button" class="salesrepsearch" onclick="buttonClick()">Search</button>
+            <label id="basicform">State or State Initials (e.g Ohio is OH): <br/></label>
+            <input class="basicform" id="state_text" type="text" name="statename" autcomplete="off_1"><br />
+            <label id="basicform">First 3 Digits of Zipcode (optional): <br/></label>
+            <input class="basicform" id="zipcode" type="text" name="zipcodes" autocomplete="off_2">
+            <button type="button" id="button" class="basicform" onclick="buttonClick()">Search</button>
         </form>
 
         <div id="salesrep_output">
@@ -63,48 +63,48 @@
         </div>
 
         <script>
-                var state = document.getElementById('state_text');
-                var zip = document.getElementById('zipcode');
-                state.addEventListener("keyup", function(event) {
-                    if (event.keyCode === 13) {
-                        event.preventDefault();
-                        document.getElementById('button').click();
-                    }
-                });
-                zip.addEventListener("keyup", function(event) {
-                    if (event.keyCode === 13) {
-                        event.preventDefault();
-                        document.getElementById('button').click();
-                    }
-                })
-    
-                function buttonClick() {
-                    var stateField = document.getElementById('state_text');
-                    var zipField = document.getElementById('zipcode');
-                    var list;
-    
-                    if (stateField.value.length < 2) {
-                        alert("Please Supply a State name or Initial.");
-                        return;
-                    }
-    
-                    if (zipField.value.length > 3) {
-                        zipField.value = zipField.value.substring(0,3);
-                    }
-                    if (zipField.value.length === 3) {
-                        list = searchSalesRep(stateField.value, zipField.value);
-                    }
-                    else {
-                        list = searchSalesRep(stateField.value, -1);
-                    }
-
-                    document.getElementById('outputlist').innerHTML = "";
-                    for (var i = 0; i < list.length; i++) {
-                        var node = document.createElement("LI");
-                        node.appendChild(document.createTextNode(list[i].fullname()));
-                        document.getElementById('outputlist').appendChild(node);
-                    }
+            var state = document.getElementById('state_text');
+            var zip = document.getElementById('zipcode');
+            state.addEventListener("keyup", function(event) {
+                if (event.keyCode === 13) {
+                    event.preventDefault();
+                    document.getElementById('button').click();
                 }
-            </script>
+            });
+            zip.addEventListener("keyup", function(event) {
+                if (event.keyCode === 13) {
+                    event.preventDefault();
+                    document.getElementById('button').click();
+                }
+            })
+
+            function buttonClick() {
+                var stateField = document.getElementById('state_text');
+                var zipField = document.getElementById('zipcode');
+                var list;
+
+                if (stateField.value.length < 2) {
+                    alert("Please Supply a State name or Initial.");
+                    return;
+                }
+
+                if (zipField.value.length > 3) {
+                    zipField.value = zipField.value.substring(0,3);
+                }
+                if (zipField.value.length === 3) {
+                    list = searchSalesRep(stateField.value, zipField.value);
+                }
+                else {
+                    list = searchSalesRep(stateField.value, -1);
+                }
+
+                document.getElementById('outputlist').innerHTML = "";
+                for (var i = 0; i < list.length; i++) {
+                    var node = document.createElement("LI");
+                    node.appendChild(document.createTextNode(list[i].fullname()));
+                    document.getElementById('outputlist').appendChild(node);
+                }
+            }
+        </script>
     </body>
 </html>
