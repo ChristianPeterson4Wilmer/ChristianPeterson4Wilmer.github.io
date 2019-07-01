@@ -48,7 +48,7 @@ div#tilepage {
     left: 10%;
     top: 150px;
 }
-div#question {
+div.question {
     text-align: center;
     position: relative;
     display: inline-block;
@@ -66,7 +66,7 @@ div#question {
     color: white
 }
 
-div#question:hover {
+div.question:hover {
     background-color: white;
     color: black;
     border-color: black;
@@ -151,7 +151,7 @@ ul#outputlist {
 li {
     margin-top: 12px;
 }
-form#socialform, form#helpform, form#changeform {
+form#socialform, form#helpform, form#changeform, form#newprdctform {
     position: relative;
     width: 480px;
     margin: auto;

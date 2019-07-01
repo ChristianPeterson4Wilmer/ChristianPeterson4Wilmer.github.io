@@ -5,69 +5,52 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<meta name="description" content="4wilmer New Product Request Form">
 	<title>New Product Request</title>
-	
-	<link rel="stylesheet" type="text/css" href="../styles_v1.css">
-    <script src="../scripts.js"></script>
-    <script src="tooltips.js"></script>
+
+	<script src="formscripts.js"></script>
 </head>
-<body onload="load('../index.html')">
-<div class="help" id="help-tooltip">
-	<h3 id="help-header"></h3>
-	<p id="help-text"></p>
+<body onload="load()" id="homepage">
+<div id="header">
+	<h1>Technical Marketing Specialist</h1>
+	<h2><i>New Product Request Form</i></h2>
 </div>
-<div id="background"></div>
-<div id="content">
+<div id="homelink" onclick="redirect('../index.html')"><span id="homelink">HOME</span></div>
+
+<div id="content" style="margin-bottom: 150px;">
 	<form class="gform" method="POST" data-email="Christian.Peterson@4wilmer.com" id="newprdctform"
 	action="https://script.google.com/macros/s/AKfycbx1FpDhW4sBpAa02Rjy81dSD1NguQksQYbgj78x/exec" autocomplete="off">
-		<h2>4Wilmer.com Site Update</h2>
-		<h3><i>New Product Request</i></h3>
-		<p id="info">Product Request Forms are required for each individual product. If these are assosciated with a new product group please additionally fill out the "New Product Group Form"
-		as well. If you need <b>Help</b> hover your mouse over any entry to get a brief description. 
-		If you'd like to see what a product page looks like <a href="../img/img_newprodexample.png" target="_blank">Click Here</a>.</p>
-	
-		<h4>Your Information</h4>
-		<span class="line" onmouseenter="displayToolTip(0)" onmouseleave="hideToolTip()"><span class="left-side">First & Last Name</span> <input class="right-side" type="text" name="user-name" id="user-name" required></span> <br />
-		<span class="line" onmouseenter="displayToolTip(1)" onmouseleave="hideToolTip()"><span class="left-side">Email </span><input class="right-side" type="text" name="email" required></span> <br />
-		
-		<br />
-		<h4>New Product Information</h4>
-		<span class="line" onmouseenter="displayToolTip(2)" onmouseleave="hideToolTip()"><span class="left-side">Product Name</span><input class="right-side" type="text" name="product-name" required></span> <br />
-		<span class="line" onmouseenter="displayToolTip(3)" onmouseleave="hideToolTip()"><span class="left-side">Product Group</span><input class="right-side" type="text" name="product-group" required></span> <br />
-		<span class="line" onmouseenter="displayToolTip(4)" onmouseleave="hideToolTip()"><span class="left-side">Product Image</span><span class="right-side">
-		<a href="#" onclick="redirect('newproduct');">Email Images</a></span></span> <br />
-		
-		New Product Description<br />
-		<span class="line" onmouseenter="displayToolTip(5)" onmouseleave="hideToolTip()">
-		<textarea name="product-new-desc" form="newprdctform" rows="5" cols="75"></textarea>
-		</span>
-		 <br />
-		 
-		 Short Description<br />
-		 <span class="line" onmouseenter="displayToolTip(6)" onmouseleave="hideToolTip()">
-		 <textarea name="product-short-desc" form="newprdctform" rows="5" cols="75" required></textarea>
-		 </span>
-		 <br />
-		 
-		 Long Description<br />
-		 <span class="line" onmouseenter="displayToolTip(7)" onmouseleave="hideToolTip()">
-		 <textarea name="product-long-desc" form="newprdctform" rows="5" cols="75" required></textarea>
-		 </span>
-		 <br />
-		 
-		 More Resources <br />
-		 <span class="line" onmouseenter="displayToolTip(8)" onmouseleave="hideToolTip()">
-		 <textarea name="product-resources" form="newprdctform" rows="5" cols="75"></textarea>
-		 </span>
-		 <br />
-		 
-		 Additional Comments<br />
-		 <span class="line" onmouseenter="displayToolTip(9)" onmouseleave="hideToolTip()">
-		 <textarea name="product-comments" form="newprdctform" rows="3" cols="75"></textarea>
-		 </span>
-		 <br />
-		
-		
-		<input type="submit">
+	<h2 style="color: white;">Your Information</h2>
+	<label id="basicform">First & Last Name<br /></label> 
+	<input class="basicform" type="text" name="user-name" id="user-name" required><br />
+
+	<label id="basicform">Email<br /></label>
+	<input class="basicform" type="text" name="email" required><br />
+
+	<h2 style="color: white">New Product Information</h2>
+	<label id="basicform">Product Name<br /></label>
+	<input class="basicform" type="text" name="product-name" id="product-name" required><br />
+
+	<label id="basicform">Product Group<br /></label>
+	<input class="basicform" type="text" name="product-group" id="product-group" required><br />
+
+	<label id="basicform">New Product Description<br /></label>
+	<textarea class="basicform" type="text" name="product-new-desc"></textarea>
+
+	<label id="basicform">Short Description<br /></label>
+	<textarea class="basicform" type="text" name="product-short-desc"></textarea>
+
+	<label id="basicform">Long Description<br /></label>
+	<textarea class="basicform" type="text" name="product-long-desc"></textarea>
+
+	<label id="basicform">Additional Resources, flyers, or brochures<br /></label>
+	<textarea class="basicform" type="text" name="product-add-resc"></textarea>
+
+	<label id="basicform">Additional Comments<br /></label>
+	<textarea class="basicform" type="text" name="comments"></textarea>
+
+	<label id="basicform"><a href="#" id="basicform_email" onclick="generateEmail('newproduct');">Email Related Documents</a></label>
+	<br />
+	<br />
+	<button type="submit" value="Submit" class="basicform">Submit</button>
 	</form>
 	</div>
 	

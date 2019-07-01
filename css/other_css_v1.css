@@ -62,7 +62,7 @@ div#question:hover {
 h3 {
     color: white;
 }
-h3#breakup {
+h3.breakup {
     clear: left;
     margin-top: 50px;
 }
@@ -143,7 +143,7 @@ ul#outputlist {
 li {
     margin-top: 12px;
 }
-form#socialform, form#helpform, form#changeform {
+form#socialform, form#helpform, form#changeform, form#newprdctform {
     position: relative;
     width: 480px;
     margin: auto;
