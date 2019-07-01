@@ -14,13 +14,13 @@ div#homelink {
     height: 150px;
     font-size: 48px;
     text-align: center;
-    color: lightgray;
+    color: #0047ab;
 }
 div#homelink:hover {
-    color: black;
-    background-color: lightgray;
-    border: outset 1px black;
+    color: white;
+    background-color: #0047ab;
     cursor: pointer;
+    padding-bottom: 50px;
 }
 span#homelink {
     position: relative;
@@ -52,7 +52,7 @@ div#question {
     text-align: center;
     position: relative;
     display: inline-block;
-    border: solid 2px #aaa;
+    border: solid 2px white;
     padding: 10px;
     width: 300px;
     vertical-align: center;
@@ -61,21 +61,15 @@ div#question {
 
     overflow: hidden;
     border-radius: 10px;
-    box-shadow: 5px 5px 10px black;
 
-    background-image: -webkit-gradient(linear, 0 0, 300 150, from(#fff), to(#aaaaaa));
-
-    border-style: outset;
     cursor: pointer;
-    color: orangered;
+    color: white
 }
 
 div#question:hover {
-    border-style: inset;
-    background-image: -webkit-gradient(linear, 300 150, 0 0, from(#fff), to(#aaa));
-}
-h2#question {
-    text-shadow: 1px 1px 1px black;
+    background-color: white;
+    color: black;
+    border-color: black;
 }
 h3 {
     color: white;
@@ -121,6 +115,7 @@ label#basicform {
     text-align: center;
     width: 480px;
     color: white;
+    font-size: 16px;
 }
 button.basicform{
     width: 100px;
@@ -156,15 +151,23 @@ ul#outputlist {
 li {
     margin-top: 12px;
 }
-form#socialform {
+form#socialform, form#helpform, form#changeform {
     position: relative;
     width: 480px;
     margin: auto;
     margin-top: 200px;
 }
-form#helpform {
+a#basicform_email {
     position: relative;
-    width: 480px;
+    display: block;
+    width: 100%;
     margin: auto;
-    margin-top: 200px;
+    border: 1px solid white;
+    color: white;
+    text-decoration: none;
+    padding: 4px;
+}
+a#basicform_email:focus, a#basicform_email:hover, a#basicform_email:active {
+    background-color: white;
+    color: black;
 }

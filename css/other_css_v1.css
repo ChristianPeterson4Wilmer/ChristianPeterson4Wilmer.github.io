@@ -29,11 +29,19 @@ div#tilepage {
     left: 10%;
     top: 150px;
 }
+a#regText {
+    text-decoration: none;
+    color: white;
+}
+a#regText:hover {
+    color: black;
+}
+
 div#question {
     text-align: center;
     position: relative;
     float: left;
-    border: solid 2px #aaa;
+    border: solid 2px white;
     padding: 10px;
     width: 300px;
     height: 125px;
@@ -42,15 +50,14 @@ div#question {
 
     overflow: hidden;
 
-    background-color: lightgray;
-
-    border-style: outset;
     cursor: pointer;
-    color: orangered;
+    color: white;
 }
 
 div#question:hover {
-    border-style: inset;
+    background-color: white;
+    color: black;
+    border-color: black;
 }
 h3 {
     color: white;
@@ -136,15 +143,24 @@ ul#outputlist {
 li {
     margin-top: 12px;
 }
-form#socialform {
+form#socialform, form#helpform, form#changeform {
     position: relative;
     width: 480px;
     margin: auto;
     margin-top: 200px;
 }
-form#helpform {
+a#basicform_email {
     position: relative;
-    width: 480px;
+    display: block;
+    width: 100%;
     margin: auto;
-    margin-top: 200px;
+    border: 1px solid white;
+    color: white;
+    text-decoration: none;
+    padding: 4px;
+    text-align: center;
+}
+a#basicform_email:focus, a#basicform_email:hover, a#basicform_email:active {
+    background-color: white;
+    color: black;
 }

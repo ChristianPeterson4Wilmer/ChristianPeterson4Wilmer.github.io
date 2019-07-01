@@ -6,46 +6,40 @@
 	<meta name="description" content="4wilmer Change Request Form">
 	<title>Change Request Form</title>
 
-	<link rel="stylesheet" type="text/css" href="../styles_v1.css">
-    <script src="../scripts.js"></script>
-    <script src="tooltips.js"></script>
+	<script src="formscripts.js"></script>
 	
 </head>
-<body onload="load('../index.html')">
-<div class="help" id="help-tooltip">
-	<h3 id="help-header"></h3>
-	<p id="help-text"></p>
+<body onload="load()" id="homepage">
+<div id="header">
+	<h1>Technical Marketing Specialist</h1>
+	<h2><i>Change Request Form</i></h2>
 </div>
-<div id="background"></div>
-<div id="content">
+<div id="homelink" onclick="redirect('../index.html')">
+    <span id="homelink">HOME</span>
+</div>
+
+<div id="content" style="margin-bottom: 150px;">
 	<form class="gform" method="POST" data-email="Christian.Peterson@4wilmer.com" id="changeform"
 	action="https://script.google.com/macros/s/AKfycbxER6RInfQlnR6Xvo7e0VOSgsvRtPgm0tgVuxRM/exec" autocomplete="off">
-		<h2>4Wilmer.com Site Update</h2>
-		<h3><i>Change Request</i></h3>
-		<p id="info">Request a change on the website if something needs updating, something is not correct, or there is some other issue.
-		If you need <b>Help</b> hover your mouse over any entry to get a brief description.</p>
-		
-		<h4>Your Information</h4>
-		<span class="line" onmouseenter="displayToolTip(0)" onmouseleave="hideToolTip()"><span class="left-side">First & Last Name</span> <input class="right-side" type="text" name="user-name" id="user-name" required></span> <br />
-		<span class="line" onmouseenter="displayToolTip(1)" onmouseleave="hideToolTip()"><span class="left-side">Email </span><input class="right-side" type="text" name="email" required></span> <br />
-		
-		<br />
-		
-		Link to Issue<br />
-		<span class="line" onmouseenter="displayToolTip(11)" onmouseleave="hideToolTip()">
-		<textarea name="change-link" form="changeform" rows="5" cols="75" required></textarea>
-		</span> <br />
+		<h2 style="color: white">Your Information</h2>
+		<label id="basicform">First & Last Name<br /></label>
+		<input class="basicform" type="text" name="user-name" id="user-name" required><br />
 
-		Change Description<br />
-		<span class="line" onmouseenter="displayToolTip(12)" onmouseleave="hideToolTip()">
-		<textarea name="change-desc" form="changeform" rows="5" cols="75" required></textarea>
-		</span> <br />
+		<label id="basicform">Email<br /></label>
+		<input class="basicform" type="text" name="email" required><br />
 		
-		<span class="line" onmouseEnter="displayToolTip(13)" onmouseleave="hideToolTip()">
-		<span class="left-side">Related Documents</span>
-		<span class="right-side"><a href="#" onclick="redirect('change');">Email Related Doucments</a></span><br />
+		<h2 style="color: white">Change Information</h2>
+		<label id="basicform">Link to Issue</label>
+		<textarea class="basicform" name="issue" form="changeform"></textarea><br />
+
+		<label id="basicform">Change Description</label>
+		<textarea class="basicform" name="description" form="changeform"></textarea><br />
+
+		<label id="basicform"><a href="#" id="basicform_email" onclick="generateEmail('change');">Email Related Documents</a></label>
 		<br />
-		<input type="submit">
+		<br />
+
+		<button type="submit" value="Submit" class="basicform">Submit</button>
 	</form>
 
 </div>

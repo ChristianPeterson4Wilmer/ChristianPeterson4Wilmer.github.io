@@ -6,31 +6,7 @@
         <meta name="description" content="Request help from the Technical Marketing Specialist">
 
         <title>Help Request</title>
-        <script>
-            function redirect(path) {
-                window.location.href = path;
-            }
-            function loadCss(browser, prePath) {
-                var link = document.createElement('link');
-                link.rel = "stylesheet";
-                link.type = "text/css";
-                link.href = prePath;
-                //alert(browser);
-                if (browser === "Netscape") {
-                    link.href += "netscape_css_v1.css";
-                }
-                else {
-                    link.href += "other_css_v1.css";
-                }
-    
-                document.getElementsByTagName('HEAD')[0].appendChild(link);
-            }
-    
-            function load() {
-                var browser = window.navigator.appName; // check name of browser, to determine whether to use netscape css or not
-                loadCss(browser, "../css/");
-            }
-        </script>
+        <script src="formscripts.js"></script>
     </head>
 
     <body onload="load()" id="homepage">
@@ -77,18 +53,7 @@
                 
             <br />
             <br />
-            <!--
-            <div onmouseenter="displayToolTip(17)" onmouseLeave="hideToolTip()">
-            Website <br/>
-                <span class="line">
-                    <input type="radio" name="issue-website" value="4wilmer.com">4wilmer.com
-                    <input type="radio" name="issue-website" value="yourwilmer.com">yourwilmer.com
-                    <input type="radio" name="issue-website" value="4printplayer.com">4printplayer.com
-                     <input type="radio" name="issue-website" value="NA" checked>NA/Other/Don't Know       
-                </span>
-                <br />
-            </div>
-        -->
+            
             <label id="basicform">Issue Description<br /></label>
             <textarea class="basicform" name="issue" form="helpform"></textarea><br />
 

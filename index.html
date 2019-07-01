@@ -76,6 +76,7 @@ function generateButtonInSection(sectionName, text, clickAction) {
 	if (browser !== "Netscape") {
 		var hardlink = document.createElement('a');;
 		hardlink.setAttribute("href", clickAction.split("'")[1]);
+		hardlink.setAttribute("id", "regText");
 		div.appendChild(hardlink);
 		hardlink.appendChild(h2);
 	}
