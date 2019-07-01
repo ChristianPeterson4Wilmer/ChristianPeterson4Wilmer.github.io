@@ -3,53 +3,81 @@
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <meta name="description" content="Request help from Technical Marketing Specialist">
+        <meta name="description" content="Request help from the Technical Marketing Specialist">
 
         <title>Help Request</title>
-        <link rel="stylesheet" type="text/css" href="../styles_v1.css">
-        <script src="../scripts.js"></script>
-        <script src="tooltips.js"></script>
+        <script>
+            function redirect(path) {
+                window.location.href = path;
+            }
+            function loadCss(browser, prePath) {
+                var link = document.createElement('link');
+                link.rel = "stylesheet";
+                link.type = "text/css";
+                link.href = prePath;
+                //alert(browser);
+                if (browser === "Netscape") {
+                    link.href += "netscape_css_v1.css";
+                }
+                else {
+                    link.href += "other_css_v1.css";
+                }
+    
+                document.getElementsByTagName('HEAD')[0].appendChild(link);
+            }
+    
+            function load() {
+                var browser = window.navigator.appName; // check name of browser, to determine whether to use netscape css or not
+                loadCss(browser, "../css/");
+            }
+        </script>
     </head>
 
-    <body onload="load('../index.html')">
-        <div class="help" id="help-tooltip">
-        	<h3 id="help-header"></h3>
-	        <p id="help-text"></p>
+    <body onload="load()" id="homepage">
+        <div id="header">
+            <h1>Technical Marketing Specialist</h1>
+            <h2><i>Help Request Form</i></h2>
         </div>
-        <div id="background"></div>
-        <div id="content">
+        <div id="homelink" onclick="redirect('../index.html')"><span id="homelink">HOME</span></div>
+
+        <div id="content" style="margin-bottom: 150px;">
             <form class="gform" method="POST" data-email="Christian.Peterson@4wilmer.com" id="helpform"
             action="https://script.google.com/macros/s/AKfycbxrwbpRgxmWoslWk1UISyuvbOy1Hij_xo1V4l2qXw/exec" autocomplete="off">
-            <h2>Help Request</h2>
-            <p id="info">
-                    Any issue you have feel free to fill out this form and I will get baack to you as soon as I can.
-                    The only information <b>Required</b> on this form is First & Last name, Email, and Issue Description.
-                    If the issue is related to <a href="http://www.4printplayer.com" target="_blank">PrintPlayer</a> or 
-                    <a href="http://www.yourwilmer.com" target="_blank">YourWilmer</a>
-                    I will most likely need the customer's account number.
-                    If you need <b>Help</b> hover your mouse over any entry to get a brief description. 
-            </p>
-            <h4>Your Information</h4>
-            <span class="line" onmouseenter="displayToolTip(0)" onmouseleave="hideToolTip()"><span class="left-side">First & Last Name</span> <input class="right-side" type="text" name="user-name" id="user-name" required></span> <br />
-            <span class="line" onmouseenter="displayToolTip(1)" onmouseleave="hideToolTip()"><span class="left-side">Email </span><input class="right-side" type="text" name="email" required></span> <br />
+            <h2 style="color: white;">Your Information</h2>
+            <label id="basicform">First & Last Name<br /></label> 
+            <input class="basicform" type="text" name="user-name" id="user-name" required><br />
 
-            <h4>Customer Information</h4>
-            <span class="line" onmouseenter="displayToolTip(14)" onmouseleave="hideToolTip()">
-                <span class="left-side">Customer Name</span>
-                <input class="right-side" type="text" name="customer-name">              
-            </span>
+            <label id="basicform">Email<br /></label>
+            <input class="basicform" type="text" name="email" required><br />
+
+            <h2 style="color: white">Customer Information</h2>
+            <label id="basicform">Customer Name<br /></label>
+            <input class="basicform" type="text" name="customer-name"><br />
+
+            <label id="basicform">Customer Email<br /></label>
+            <input class="basicform" type="text" name="customer-email"><br />
+
+            <label id="basicform">Customer Account Number<br /></label>
+            <input class="basicform" type="text" name="customer-acctnum">
+
+            <h2 style="color: white;">Issue Information</h2>
+            <label id="basicform">Website of Issue<br /><br /></label>
+            <span id="basicgroup">
+                <label id="basicform" >4Wilmer.com</label> 
+                <input type="radio" class="basicradio" name="issue-website" value="4wilmer" title="4Wilmer"> <br /></span>
+            <span id="basicgroup">
+                <label id="basicform" >yourwilmer.com</label>
+                <input type="radio" class="basicradio" name="issue-website" value="yourwilmer" title="YourWilmer"> <br /></span>
+            <span id="basicgroup">
+                <label id="basicform" >4printplayer.com</label>
+                <input type="radio" class="basicradio" name="issue-website" value="printplayer" title="PrintPlayer"> <br /></span>
+            <span id="basicgroup">
+                <label id="basicform" >NA</label> 
+                <input type="radio" class="basicradio" name="issue-website" value="NA" title="NA" checked></span>
+                
             <br />
-            <span class="line" onmouseenter="displayToolTip(15)" onmouseleave="hideToolTip()">
-                    <span class="left-side">Customer Email</span>
-                    <input class="right-side" type="text" name="customer-email">              
-            </span>
             <br />
-            <span class="line" onmouseenter="displayToolTip(16)" onmouseleave="hideToolTip()">
-                    <span class="left-side">Customer Account Number</span>
-                    <input class="right-side" type="text" name="customer-acctnum">              
-            </span>
-            <br />
-            <br />
+            <!--
             <div onmouseenter="displayToolTip(17)" onmouseLeave="hideToolTip()">
             Website <br/>
                 <span class="line">
@@ -60,14 +88,12 @@
                 </span>
                 <br />
             </div>
-            
-            Issue Description
-            <span class="line" onmouseenter="displayToolTip(18)" onmouseleave="hideToolTip()">
-                <textarea name="issue" form="helpform" rows="7" cols="75" required></textarea>
-            </span>
-            <br />
+        -->
+            <label id="basicform">Issue Description<br /></label>
+            <textarea class="basicform" name="issue" form="helpform"></textarea><br />
 
-            <input type="submit"></form>
+            <button type="submit" value="Submit" class="basicform">Submit</button>
+        </form>
         </div>
     </body>
 </html>

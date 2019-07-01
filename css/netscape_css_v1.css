@@ -94,6 +94,20 @@ input.basicform {
     height: 40px;
     border-radius: 10px;
 }
+span#basicgroup {
+    display: block;
+    width: 100%;
+    margin-right: -100%;
+    border-bottom: 1px solid white;
+    margin-bottom: 1%;
+
+}
+.basicradio {
+    float: right;
+    cursor: pointer;
+    width: 16px;
+    height: 16px;
+}
 textarea.basicform {
     text-align: left;
     margin-bottom: 24px;
@@ -115,11 +129,15 @@ button.basicform{
     float: right;
     border-color: white;
     background-color: lightgray;
-    border-style: outset;
+    color: white;
+    font-size: 20px;
     cursor: pointer;
+    background-color: transparent;
 }
-button#salesrepsearch:hover {
+button.basicform:focus, button.basicform:hover, button.basicform:active {
     border-style: inset;
+    background-color: white;
+    color: black;
 }
 div#salesrep_output {
     position: absolute;
@@ -139,6 +157,12 @@ li {
     margin-top: 12px;
 }
 form#socialform {
+    position: relative;
+    width: 480px;
+    margin: auto;
+    margin-top: 200px;
+}
+form#helpform {
     position: relative;
     width: 480px;
     margin: auto;
