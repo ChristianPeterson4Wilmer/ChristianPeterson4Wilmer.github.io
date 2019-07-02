@@ -4,7 +4,7 @@ body {
 }
 
 body#homepage {
-    /*background-color: #0047ab;*/
+    /*background-color: #0047ab; old color*/
     background-color: #535560;
 }
 body#siteupdate {
@@ -61,6 +61,40 @@ div#header {
     box-shadow: black 5px 0 10px;
     
 }
+div#footer {
+    position: fixed;
+    height: 35px;
+    width: 100%;
+    left: 0;
+    bottom: 0;
+    background-color: white;
+    color: black;
+    font-size: 16px;
+    border-top: 1px solid black;
+    z-index: 10;
+}
+span#container_footerlinks {
+    position: relative;
+    text-align: right;
+    display: inline-block;
+    width: 100%;
+    margin-left: -50px;
+}
+
+span#container_footerlinks a {
+    cursor: pointer;
+    margin-left: 25px;
+    text-decoration: none;
+    color: black;
+}
+span#container_footerlinks a:hover {
+    background-color: #535560;
+    padding: 2px;
+    color: white;
+    border-left: 1px solid black;
+    border-bottom: 1px solid black;
+    border-right: 1px solid black;
+}
 div#tilepage {
     position: absolute;
     width: 80%;
@@ -69,6 +103,9 @@ div#tilepage {
     height: 80%;
     left: 10%;
     top: 150px;
+}
+div#content, div#tilepage {
+    margin-bottom: 15%;
 }
 div.question {
     text-align: center;
