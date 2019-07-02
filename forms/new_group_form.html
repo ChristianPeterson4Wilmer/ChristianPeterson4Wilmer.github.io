@@ -5,72 +5,60 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<meta name="description" content="4wilmer New Product Request Form">
 	<title>New Product Group Request</title>
-	
-	<link rel="stylesheet" type="text/css" href="../styles_v1.css">
-    <script src="../scripts.js"></script>
-    <script src="tooltips.js"></script>
+	<script src="formscripts.js"></script>
 </head>
-<body onload="load('../index.html')">
-<div class="help" id="help-tooltip">
-	<h3 id="help-header"></h3>
-	<p id="help-text"></p>
-</div>
-<div id="background"></div>
-<div id="content">
-	<form class="gform" method="POST" data-email="Christian.Peterson@4wilmer.com" id="newgroupform"
-	action="https://script.google.com/macros/s/AKfycbwvVEM4obExLgI7Hw0R0JWTysMHUUVsyKN0scVq/exec" autocomplete="off">
-		<h2>4Wilmer.com Site Update</h2>
-		<h3><i>New Product Group Request</i></h3>
-		<p id="info"><b>Help</b> hover your mouse over any entry to get a brief description.</p>
-	
-		<h4>Your Information</h4>
-		<span class="line" onmouseenter="displayToolTip(0)" onmouseleave="hideToolTip()"><span class="left-side">First & Last Name</span> <input class="right-side" type="text" name="user-name" id="user-name" required></span> <br />
-		<span class="line" onmouseenter="displayToolTip(1)" onmouseleave="hideToolTip()"><span class="left-side">Email </span><input class="right-side" type="text" name="email" required></span> <br />
-		
-		<br />
-		<h4>New Product Group Information</h4>
-		<span class="line" onmouseenter="displayToolTip(32)" onmouseleave="hideToolTip()"><span class="left-side">Product Group Name</span><input class="right-side" type="text" name="group-name" required></span> <br />
-		<span class="line" onmouseenter="displayToolTip(33)" onmouseleave="hideToolTip()"><span class="left-side">Product Group Image</span><span class="right-side">
-        <a href="#" onclick="redirect('newproductgroup');">Email Images</a></span></span> <br />
-        <br />
-        <div onmouseenter="displayToolTip(34)" onmouseLeave="hideToolTip()">
-            Product Group Category <br/>
-                <span class="line">
-                    <input type="radio" name="group-category" value="Financial">Financial Products
-                    <input type="radio" name="group-category" value="Healthcare">Healthcare Products
-                     <input type="radio" name="group-category" value="All-Markets" checked>All Markets     
-                </span>
-                <br />
-            </div>
-		
-		New Product Group Description<br />
-		<span class="line" onmouseenter="displayToolTip(35)" onmouseleave="hideToolTip()">
-		<textarea name="group-desc" form="newgroupform" rows="5" cols="75" required></textarea>
-		</span>
-		 <br />
-		 
-		 Products in Product Group<br />
-		 <span class="line" onmouseenter="displayToolTip(36)" onmouseleave="hideToolTip()">
-		 <textarea name="group-products" form="newgroupform" rows="5" cols="75" required></textarea>
-		 </span>
-		 <br />
-		 
-		 Links to Additional Resources<br />
-		 <span class="line" onmouseenter="displayToolTip(37)" onmouseleave="hideToolTip()">
-		 <textarea name="group-additional-resource" form="newgroupform" rows="5" cols="75"></textarea>
-		 </span>
-		 <br />
-		 
-		 Additional Comments<br />
-		 <span class="line" onmouseenter="displayToolTip(9)" onmouseleave="hideToolTip()">
-		 <textarea name="group-comments" form="newgroupform" rows="3" cols="75"></textarea>
-		 </span>
-		 <br />
-		
-		
-		<input type="submit">
-	</form>
+<body onload="load()" id="homepage">
+	<div id="header">
+		<h1>Technical Marketing Specialist</h1>
+		<h2><i>New Product Group Request Form</i></h2>
 	</div>
+	<div id="homelink" onclick="redirect('../index.html')"><span id="homelink">HOME</span></div>
+	<div id="content" style="margin-bottom: 150px;">
+		<form class="gform" method="POST" data-email="Christian.Peterson@4wilmer.com" id="newgroupform"
+		action="https://script.google.com/macros/s/AKfycbwvVEM4obExLgI7Hw0R0JWTysMHUUVsyKN0scVq/exec" autocomplete="off">
+
+			<h2 style="color: white">Your Information</h2>
+			<label id="basicform">First & Last Name<br /></label>
+			<input class="basicform" type="text" name="user-name" id="user-name" required><br />
+			<label id="basicform">Email<br /></label>
+			<input class="basicform" type="text" name="email" required><br />
+
+			<h2 style="color:white;">Product Group Information</h2>
+			<label id="basicform">Product Group Name<br /></label>
+			<input class="basicform" type="text" name="group-name" id="group-name"><br />
+
+			<label id="basicform">Product Group Category<br /></label><br />
+			<span id="basicgroup">
+				<label id="basicform">Financial Products</label>
+				<input type="radio" class="basicradio" name="group-category" value="Financial" title="Financial Products"><br />
+			</span>
+			<span id="basicgroup">
+				<label id="basicform">Healthcare Products</label>
+				<input type="radio" class="basicradio" name="group-category" value="Healthcare" title="Healthcare Products"><br />
+			</span>
+			<span id="basicgroup">
+				<label id="basicform">All Markets</label>
+				<input type="radio" class="basicradio" name="group-category" value="All" title="All Markets" checked><br />
+			</span> <br />
+
+			<label id="basicform">Product Group Description<br /></label>
+			<textarea class="basicform" name="group-description" form="newgroupform" required></textarea><br />
+
+			<label id="basicform">Products in Product Group<br /></label>
+			<textarea class="basicform" name="products-in-group" form="newgroupform" required></textarea><br />
+
+			<label id="basicform">Additional Resources, flyers, or brochures<br /></label>
+			<textarea class="basicform" name="group-add-resource" form="newgroupform"></textarea><br />
+
+			<label id="basicform">Additional Comments<br /></label>
+			<textarea class="basicform" name="group-comment" form="newgroupform"></textarea><br />
+
+			<label id="basicform"><a href="#" id="basicform_email" onclick="generateEmail('newproductgroup');">Email Product Group Images</a></label>
+			<br />
+			<br />
+			<button type="submit" value="Submit" class="basicform">Submit</button>
+		</form>
+		</div>
 	
 </body>
 </html>
