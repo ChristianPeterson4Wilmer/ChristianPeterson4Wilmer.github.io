@@ -5,9 +5,19 @@ body {
 
 body#homepage {
     /*background-color: #0047ab;*/
-    background-color: #535E6E;
+    background-color: #535560;
 }
-div#homelink {
+body#siteupdate {
+    background-color: #6E5353;
+}
+body#requestpage {
+    background-color: #53646E;
+}
+body#utilitypage {
+    background-color: #536452;
+}
+
+div#homelink, div#homesiteupdate, div#homerequest, div#homeutility {
     position: absolute;
     top: 0;
     left: 0;
@@ -15,17 +25,28 @@ div#homelink {
     height: 150px;
     font-size: 48px;
     text-align: center;
-    color: #535E6E;
+    color: black;
 }
-div#homelink:hover {
+div#homelink:hover, div#homesiteupdate:hover, div#homerequest:hover, div#homeutility:hover  {
     color: white;
-    background-color:  #535E6E;
     cursor: pointer;
     padding-bottom: 50px;
 }
 span#homelink {
     position: relative;
     top: 25%;
+}
+div#homelink:hover {
+    background-color: #535E6E;
+}
+div#homesiteupdate:hover {
+    background-color: #6E5353;
+}
+div#homerequest:hover {
+    background-color: #53646E;
+}
+div#homeutility:hover {
+    background-color: #536452;
 }
 div#header {
     position: absolute;
