@@ -5,7 +5,7 @@ body {
 
 body#homepage {
     /*background-color: #0047ab;*/
-    background-color: #3C4351;
+    background-color: #535E6E;
 }
 div#homelink {
     position: absolute;
@@ -15,11 +15,11 @@ div#homelink {
     height: 150px;
     font-size: 48px;
     text-align: center;
-    color: #3C4351;
+    color: #535E6E;
 }
 div#homelink:hover {
     color: white;
-    background-color: #3C4351;
+    background-color:  #535E6E;
     cursor: pointer;
     padding-bottom: 50px;
 }
