@@ -20,12 +20,9 @@
 <div id="content">
 	<form class="gform" method="POST" data-email="Christian.Peterson@4wilmer.com" id="changeform"
 	action="https://script.google.com/macros/s/AKfycbxER6RInfQlnR6Xvo7e0VOSgsvRtPgm0tgVuxRM/exec" autocomplete="off">
-		<h2 style="color: white">Your Information</h2>
 		<script>
 			buildUserInformationForms("changeform");
-		</script>
-		<h2 style="color: white">Change Information</h2>
-		<script>
+			buildHeader("changeform", "Change Information");
 			buildTextArea("changeform", "changeform", "issue-link", "Link to Issue", false);
 			buildTextArea("changeform", "changeform", "change-description", "Change Description", true);
 		</script>

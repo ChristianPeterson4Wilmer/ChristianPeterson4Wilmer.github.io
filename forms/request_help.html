@@ -7,6 +7,7 @@
 
         <title>Help Request</title>
         <script src="formscripts.js"></script>
+        <script src="formelements.js"></script>
     </head>
 
     <body onload="load()" id="requestpage">
@@ -19,45 +20,35 @@
         <div id="content">
             <form class="gform" method="POST" data-email="Christian.Peterson@4wilmer.com" id="helpform"
             action="https://script.google.com/macros/s/AKfycbxrwbpRgxmWoslWk1UISyuvbOy1Hij_xo1V4l2qXw/exec" autocomplete="off">
-            <h2 style="color: white;">Your Information</h2>
-            <label id="basicform">First & Last Name<br /></label> 
-            <input class="basicform" type="text" name="user-name" id="user-name" required><br />
+                <script>
+                    buildUserInformationForms("helpform");
 
-            <label id="basicform">Email<br /></label>
-            <input class="basicform" type="text" name="email" required><br />
+                    buildHeader("helpform", "Customer Information");
+                    buildTextField("helpform", "customer-name", "Customer Name");
+                    buildTextField("helpform", "customer-email", "Customer Email");
+                    buildTextField("helpform", "customer-acctnum", "Customer Account Number");
 
-            <h2 style="color: white">Customer Information</h2>
-            <label id="basicform">Customer Name<br /></label>
-            <input class="basicform" type="text" name="customer-name"><br />
+                    buildHeader("helpform", "Issue Information");
+                </script> 
+                <label id="basicform">Website of Issue<br /><br /></label>
+                <span id="basicgroup">
+                    <label id="basicform" >4Wilmer.com</label> 
+                    <input type="radio" class="basicradio" name="issue-website" value="4wilmer" title="4Wilmer"> <br /></span>
+                <span id="basicgroup">
+                    <label id="basicform" >yourwilmer.com</label>
+                    <input type="radio" class="basicradio" name="issue-website" value="yourwilmer" title="YourWilmer"> <br /></span>
+                <span id="basicgroup">
+                    <label id="basicform" >4printplayer.com</label>
+                    <input type="radio" class="basicradio" name="issue-website" value="printplayer" title="PrintPlayer"> <br /></span>
+                <span id="basicgroup">
+                    <label id="basicform" >NA</label> 
+                    <input type="radio" class="basicradio" name="issue-website" value="NA" title="NA" checked></span>
+                    
+                <br />
+                <br />
 
-            <label id="basicform">Customer Email<br /></label>
-            <input class="basicform" type="text" name="customer-email"><br />
-
-            <label id="basicform">Customer Account Number<br /></label>
-            <input class="basicform" type="text" name="customer-acctnum">
-
-            <h2 style="color: white;">Issue Information</h2>
-            <label id="basicform">Website of Issue<br /><br /></label>
-            <span id="basicgroup">
-                <label id="basicform" >4Wilmer.com</label> 
-                <input type="radio" class="basicradio" name="issue-website" value="4wilmer" title="4Wilmer"> <br /></span>
-            <span id="basicgroup">
-                <label id="basicform" >yourwilmer.com</label>
-                <input type="radio" class="basicradio" name="issue-website" value="yourwilmer" title="YourWilmer"> <br /></span>
-            <span id="basicgroup">
-                <label id="basicform" >4printplayer.com</label>
-                <input type="radio" class="basicradio" name="issue-website" value="printplayer" title="PrintPlayer"> <br /></span>
-            <span id="basicgroup">
-                <label id="basicform" >NA</label> 
-                <input type="radio" class="basicradio" name="issue-website" value="NA" title="NA" checked></span>
-                
-            <br />
-            <br />
-            
-            <label id="basicform">Issue Description<br /></label>
-            <textarea class="basicform" name="issue" form="helpform"></textarea><br />
-
-            <button type="submit" value="Submit" class="basicform">Submit</button>
+                <script>buildTextArea("helpform", "helpform", "issue", "Issue Description", true);</script>
+                <button type="submit" value="Submit" class="basicform">Submit</button>
         </form>
         </div>
     </body>

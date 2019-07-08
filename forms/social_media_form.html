@@ -7,6 +7,7 @@
 	<title>Social Media Scheduler</title>
 	
     <script src="formscripts.js"></script>
+    <script src="formelements.js"></script>
 </head>
 <body onload="load()" id="requestpage">
 
@@ -25,17 +26,17 @@
 <div id="content">
     <form class="gform" method="POST" data-email="Christian.Peterson@4wilmer.com" id="socialform"
     action="https://script.google.com/macros/s/AKfycbzbEeRj3aC9F1lmISR8awwruzqRG4YGC50EsNCFiIWHnBBbiZA/exec" autocomplete="off">
-        <label id="basicform">First & Last Name<br /></label>
-        <input class="basicform" type="text" name="user-name" id="user-name" required> <br />
-
-        <label id="basicform">Email<br /></label>
-        <input class="basicform" type="text" name="email" id="email" required><br />
+        <script>
+            buildUserInformationForms("socialform");   
+            buildHeader("socialform", "Post Information")
+        </script>
 
         <label id="basicform">Post Date<br /></label>
-        <input class="basicform" type="date" name="post-date" id="post-date" style="text-align: left;" required></span><br />
+        <input class="basicform" type="date" name="post-date" id="post-date" style="text-align: left;" required><br />
 
-        <label id="basicform">Social Media Post<br /></label>
-        <textarea class="basicform" name="post-text" form="socialform" id="post-text" rows="5" cols="75" required></textarea>
+        <script>
+            buildTextArea("socialform", "socialform", "post-text", "Social Media Post", true);
+        </script>
 
         <button type="button" value="Submit" class="basicform" onclick="socialMediaRedirect()">Submit</button>
     </form>

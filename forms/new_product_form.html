@@ -7,6 +7,7 @@
 	<title>New Product Request</title>
 
 	<script src="formscripts.js"></script>
+	<script src="formelements.js"></script>
 </head>
 <body onload="load()" id="siteupdate">
 <div id="header">
@@ -18,35 +19,18 @@
 <div id="content">
 	<form class="gform" method="POST" data-email="Christian.Peterson@4wilmer.com" id="newprdctform"
 	action="https://script.google.com/macros/s/AKfycbx1FpDhW4sBpAa02Rjy81dSD1NguQksQYbgj78x/exec" autocomplete="off">
-	<h2 style="color: white;">Your Information</h2>
-	<label id="basicform">First & Last Name<br /></label> 
-	<input class="basicform" type="text" name="user-name" id="user-name" required><br />
+		<script>
+			buildUserInformationForms("newprdctform");
 
-	<label id="basicform">Email<br /></label>
-	<input class="basicform" type="text" name="email" required><br />
-
-	<h2 style="color: white">New Product Information</h2>
-	<label id="basicform">Product Name<br /></label>
-	<input class="basicform" type="text" name="product-name" id="product-name" required><br />
-
-	<label id="basicform">Product Group<br /></label>
-	<input class="basicform" type="text" name="product-group" id="product-group" required><br />
-
-	<label id="basicform">New Product Description<br /></label>
-	<textarea class="basicform" type="text" name="product-new-desc"></textarea>
-
-	<label id="basicform">Short Description<br /></label>
-	<textarea class="basicform" type="text" name="product-short-desc"></textarea>
-
-	<label id="basicform">Long Description<br /></label>
-	<textarea class="basicform" type="text" name="product-long-desc"></textarea>
-
-	<label id="basicform">Additional Resources, flyers, or brochures<br /></label>
-	<textarea class="basicform" type="text" name="product-add-resc"></textarea>
-
-	<label id="basicform">Additional Comments<br /></label>
-	<textarea class="basicform" type="text" name="comments"></textarea>
-
+			buildHeader("newprdctform", "New Product Information");
+			buildTextField("newprdctform", "product-name", "Product Name", true);
+			buildTextField("newprdctform", "product-group", "Product Group", true);
+			buildTextArea("newprdctform", "newprdctform", "product-new-desc", "New Product Description", true);
+			buildTextArea("newprdctform", "newprdctform", "product-short-desc", "Short Description", true);
+			buildTextArea("newprdctform", "newprdctform", "product-long-desc", "Long Description", true);
+			buildTextArea("newprdctform", "newprdctform", "add-resources", "Additional Resources, flyers, or brochures", true);
+			buildTextArea("newprdctform", "newprdctform", "comments", "Additional Comments");
+		</script>
 	<label id="basicform"><a href="#" id="basicform_email" onclick="generateEmail('newproduct');">Email Related Documents</a></label>
 	<br />
 	<br />

@@ -43,6 +43,15 @@ function buildNewLine(parentId) {
 }
 
 function buildUserInformationForms(parentId) {
+    buildHeader(parentId, "Your Information");
     buildTextField(parentId, "user-name", "First & Last Name", true);
     buildTextField(parentId, "email", "Email", true);
+}
+
+function buildHeader(parentId, text) {
+    var header = document.createElement("h2");
+    header.setAttribute("style", "color: white;");
+    header.appendChild(document.createTextNode(text));
+
+    document.getElementById(parentId).appendChild(header);
 }

@@ -6,6 +6,7 @@
 	<meta name="description" content="4wilmer New Product Request Form">
 	<title>New Product Group Request</title>
 	<script src="formscripts.js"></script>
+	<script src="formelements.js"></script>
 </head>
 <body onload="load()" id="siteupdate">
 	<div id="header">
@@ -16,16 +17,12 @@
 	<div id="content">
 		<form class="gform" method="POST" data-email="Christian.Peterson@4wilmer.com" id="newgroupform"
 		action="https://script.google.com/macros/s/AKfycbwvVEM4obExLgI7Hw0R0JWTysMHUUVsyKN0scVq/exec" autocomplete="off">
+			<script>
+				buildUserInformationForms("newgroupform");
 
-			<h2 style="color: white">Your Information</h2>
-			<label id="basicform">First & Last Name<br /></label>
-			<input class="basicform" type="text" name="user-name" id="user-name" required><br />
-			<label id="basicform">Email<br /></label>
-			<input class="basicform" type="text" name="email" required><br />
-
-			<h2 style="color:white;">Product Group Information</h2>
-			<label id="basicform">Product Group Name<br /></label>
-			<input class="basicform" type="text" name="group-name" id="group-name"><br />
+				buildHeader("newgroupform", "Product Group Information");
+				buildTextField("newgroupform", "group-name", "Product Group Name", true);
+			</script>
 
 			<label id="basicform">Product Group Category<br /></label><br />
 			<span id="basicgroup">
@@ -41,18 +38,19 @@
 				<input type="radio" class="basicradio" name="group-category" value="All" title="All Markets" checked><br />
 			</span> <br />
 
-			<label id="basicform">Product Group Description<br /></label>
-			<textarea class="basicform" name="group-description" form="newgroupform" required></textarea><br />
+			<script>
+				buildTextArea("newgroupform", "newgroupform", "group-description", "Product Group Description", true);
+				buildTextArea("newgroupform", "newgroupform", "products-in-group", "Products in Product Group", true);
+				buildTextArea("newgroupform", "newgroupform", "group-add-resource", "Additional Resources, flyers, or brochures", true);
+				buildTextArea("newgroupform", "newgroupform", "group-comment", "Additional Comments");
+			</script>
 
-			<label id="basicform">Products in Product Group<br /></label>
-			<textarea class="basicform" name="products-in-group" form="newgroupform" required></textarea><br />
-
-			<label id="basicform">Additional Resources, flyers, or brochures<br /></label>
-			<textarea class="basicform" name="group-add-resource" form="newgroupform"></textarea><br />
+<!--
 
 			<label id="basicform">Additional Comments<br /></label>
 			<textarea class="basicform" name="group-comment" form="newgroupform"></textarea><br />
 
+			-->
 			<label id="basicform"><a href="#" id="basicform_email" onclick="generateEmail('newproductgroup');">Email Product Group Images</a></label>
 			<br />
 			<br />
