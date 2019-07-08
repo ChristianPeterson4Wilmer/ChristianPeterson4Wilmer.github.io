@@ -5,9 +5,8 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<meta name="description" content="4wilmer Change Request Form">
 	<title>Change Request Form</title>
-
 	<script src="formscripts.js"></script>
-	
+	<script src="formelements.js"></script>
 </head>
 <body onload="load()" id="siteupdate">
 <div id="header">
@@ -22,18 +21,14 @@
 	<form class="gform" method="POST" data-email="Christian.Peterson@4wilmer.com" id="changeform"
 	action="https://script.google.com/macros/s/AKfycbxER6RInfQlnR6Xvo7e0VOSgsvRtPgm0tgVuxRM/exec" autocomplete="off">
 		<h2 style="color: white">Your Information</h2>
-		<label id="basicform">First & Last Name<br /></label>
-		<input class="basicform" type="text" name="user-name" id="user-name" required><br />
-
-		<label id="basicform">Email<br /></label>
-		<input class="basicform" type="text" name="email" required><br />
-		
+		<script>
+			buildUserInformationForms("changeform");
+		</script>
 		<h2 style="color: white">Change Information</h2>
-		<label id="basicform">Link to Issue</label>
-		<textarea class="basicform" name="issue" form="changeform"></textarea><br />
-
-		<label id="basicform">Change Description</label>
-		<textarea class="basicform" name="description" form="changeform"></textarea><br />
+		<script>
+			buildTextArea("changeform", "changeform", "issue-link", "Link to Issue", false);
+			buildTextArea("changeform", "changeform", "change-description", "Change Description", true);
+		</script>
 
 		<label id="basicform"><a href="#" id="basicform_email" onclick="generateEmail('change');">Email Related Documents</a></label>
 		<br />
