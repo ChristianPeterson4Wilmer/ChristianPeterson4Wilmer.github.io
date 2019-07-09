@@ -15,6 +15,7 @@ function buildTextField(parentId, inputName = "generatedTextField", labelText = 
     var textBox = document.createElement('input');
     textBox.setAttribute("class", customInputClass);
     textBox.setAttribute("name", inputName);
+    textBox.setAttribute("id", inputName);
     textBox.setAttribute("style", addInputStyles);
     textBox.setAttribute("required", isRequired);
     document.getElementById(parentId).appendChild(textBox);
@@ -29,6 +30,7 @@ function buildTextArea(parentId, textAreaForm, inputName = "generatedTextArea", 
     var textArea = document.createElement('textarea');
     textArea.setAttribute("class", customInputClass);
     textArea.setAttribute("name", inputName);
+    textArea.setAttribute("id", inputName);
     textArea.setAttribute("form", textAreaForm);
     textArea.setAttribute("style", addInputStyles);
     textArea.setAttribute("required", isRequired);

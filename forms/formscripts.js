@@ -23,7 +23,11 @@ function load() {
     loadCss(browser, "../css/");
 }
 
-function generateEmail(type) {
+function generateEmail(type, formId) {
+    if (confirm("Would you like to also submit this form?\nSubmission indicated you have completed all the required text fields. If you do not wish to submit your form, you may do so later by clicking the 'Submit' button")) {
+        document.getElementById(formId).submit();
+    }
+
 	window.open(generateEmailString(type), '_blank');
 	
 }
@@ -39,4 +43,20 @@ function generateEmailString(type) {
 	var ret = "mailto:Christian.Peterson@4wilmer.com?subject=" + "[siteupdate] " + type + " : " + username + " Additional documents" + "&body=Attach documents to this email and provide description.";
 	
 	return ret;
+}
+
+window.onbeforeunload = function() {
+    inputs = document.getElementsByTagName('input');
+    var isUnsaved = false;
+
+    for (var i = 0; i < inputs.length; i++) {
+        if (inputs[i].value.length > 0) {
+            isUnsaved = true;
+            break;
+        }
+    }
+
+    if (isUnsaved) {
+        return "Are you sure you want to leave?";
+    }
 }
