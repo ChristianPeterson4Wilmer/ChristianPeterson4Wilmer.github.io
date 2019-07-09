@@ -44,19 +44,3 @@ function generateEmailString(type) {
 	
 	return ret;
 }
-
-window.onbeforeunload = function() {
-    inputs = document.getElementsByTagName('input');
-    var isUnsaved = false;
-
-    for (var i = 0; i < inputs.length; i++) {
-        if (inputs[i].value.length > 0) {
-            isUnsaved = true;
-            break;
-        }
-    }
-
-    if (isUnsaved) {
-        return "Are you sure you want to leave?";
-    }
-}
