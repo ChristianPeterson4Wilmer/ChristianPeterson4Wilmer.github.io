@@ -1,0 +1,36 @@
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="description" content="Request help from the Technical Marketing Specialist">
+
+        <title>Product SEO Form</title>
+        <script src="formscripts.js"></script>
+        <script src="formelements.js"></script>
+    </head>
+
+    <body onload="load()" id="homepage">
+        <div id="header">
+            <h1>Technical Marketing Specialist</h1>
+            <h2><i>SEO Information Form</i></h2>
+        </div>
+        <div id="homerequest" onclick="redirect('../index.html')"><span id="homelink">HOME</span></div>
+
+        <div id="content">
+            <form class="gform" method="POST" data-email="Christian.Peterson@4wilmer.com" id="seoform"
+            action="https://script.google.com/macros/s/AKfycbyY6QYTzRH1hSs7FBOAqAeVaX_njZdEe_p5T8y9/exec" autocomplete="off">
+                <script>
+                    buildUserInformationForms("seoform");
+
+                    buildHeader("seoform", "Product Information");
+                    buildTextField("seoform", "product-title", "Product Title");
+
+                    buildTextArea("seoform", "seoform", "description", "Tell Me About The Product", true);
+                </script>
+                <button type="submit" value="Submit" class="basicform">Submit</button>
+        </form>
+        </div>
+    </body>
+</html>

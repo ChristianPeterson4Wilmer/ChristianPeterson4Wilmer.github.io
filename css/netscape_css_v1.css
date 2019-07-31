@@ -210,7 +210,7 @@ ul#outputlist {
 li {
     margin-top: 12px;
 }
-form#socialform, form#helpform, form#changeform, form#newprdctform, form#newgroupform {
+form#socialform, form#helpform, form#changeform, form#newprdctform, form#newgroupform, form#seoform {
     position: relative;
     width: 480px;
     margin: auto;

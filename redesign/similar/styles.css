@@ -1,0 +1,257 @@
+/* http://meyerweb.com/eric/tools/css/reset/ 
+v2.0 | 20110126
+License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+    display: block;
+}
+body {
+    line-height: 1;
+}
+ol, ul {
+    list-style: none;
+}
+blockquote, q {
+    quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+    content: '';
+    content: none;
+}
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+/** End of CSS Reset **/
+body {
+    background-color: white;
+    margin: 0;
+    padding: 0;
+}
+#header {
+    position: relative;
+    top: 0;
+    left: 0;
+    margin: 0;
+    width: 100%;
+    height: 80px;
+    text-align: center;
+}
+img#logo {
+    position: relative;
+    display: inline-block;
+    right: 170px;
+}
+form.search {
+    position: relative;
+    display: inline-block;
+    left: 190px;
+    bottom: 35%;
+}   
+input[type="text"].search {
+    width: 230px;
+    height: 25px;
+    border: 2px solid black;
+    
+}   
+input[type="submit"].search {
+    height: 31px;
+    border: 2px solid black;
+    margin-left: -15px;
+    background-color: darkred;
+    color: white;
+    border-left: none;
+} 
+
+input[type="submit"]:hover {
+    cursor: pointer;
+}
+div#nav {
+    position: absolute;
+    text-align: center;
+    width: 100%;
+    left: 0;
+}
+ul#nav {
+    list-style-type: none;
+    height: 45px;
+    margin: auto;
+    width: 800px;
+}
+
+.nav_item {
+    position: relative;
+    display: inline-block;
+    padding: 8px;
+    font-size: 24px;
+    margin-left: 12px;
+}
+.nav_item:hover {
+    cursor: pointer;
+    background-color: darkred;
+    color: white;
+}
+div#footer {
+    width: 100%;
+    padding-top: 20px;
+    font-size: 14px;
+    padding-bottom: 20px;   
+}
+div#footercontent {
+    display: table;
+    position: relative;
+    margin: auto;
+}
+#nav_section {
+    display: table-cell;
+    float: left;
+}
+#contact_section {
+    float: left;
+    display: table-cell;
+    margin-left: 30px;
+    line-height: 20px;
+}
+#nav_section table {
+    
+    
+}
+#nav_section td {
+    vertical-align: top;
+    padding-right: 20px;
+   
+}
+#nav_section ul {
+    margin-top: 0;
+    list-style: none;
+    padding: 0;
+    margin-bottom: 10px;
+    line-height: 20px;
+}
+h5 {
+    margin-bottom: 10px;
+    font-weight: bold;
+}
+
+#focus {
+    position: relative;
+    background-color: darkred;
+    width: 100%;
+    left: 0;
+    margin: 0;
+    margin-top: 40px;
+    display: block;
+    height: 300px;
+}
+#content{
+    top: 430px;
+    width: 80%;
+    left: 0;
+    display: block;
+    min-height: 100px;
+    margin-left: 10%;
+    margin-bottom: 100px;
+}
+
+
+img.slide_images {
+    position: relative;
+    margin: auto;
+    display: none;
+    -webkit-animation: fadeinout 6s linear forwards;
+    animation: fadeinout 6s linear forwards;
+}
+@keyframes fadeinout {
+    0% {opacity: 0;}
+    10% {opacity: 1;}
+    50% {opacity: 1;}
+    90% {opacity: 1;}
+    100%{opacity: 0;}
+}
+
+div.slide_nav {
+    text-align: center;
+}
+div.slide_nav:hover {
+    cursor: pointer;
+}
+div.slide_button {
+    position: relative;
+    width: 25px;
+    height: 3px;
+    border: 1px solid black;
+    display: inline-block;
+    border-radius: 5px;
+}
+
+.product-title {
+
+}
+#product-info {
+    display: table-cell;
+    width: 700px;
+    padding: 8px;
+    vertical-align: top;
+}
+#product-images {
+    display: table-cell;
+    text-align: center;
+    height: 300px;
+    width: 300px;
+}
+.product-img {
+    margin-top: 8px;
+    border: 2px solid slateblue;
+    position: relative;
+    float: right;
+}
+#product-display {
+    display: table;
+    height:282px;
+    margin-top: 8px;
+    width: 1000px;
+    margin: auto;
+    color: white;
+    font-size: 24px;
+    line-height: 32px;
+}
+#product-display h2 {
+    font-size: 32px;
+    margin-bottom: 24px;
+    text-decoration: underline;
+    font-weight: bold;
+}
+
+.productpage {
+    text-align: center;
+    margin-top: 45px;
+}
+
+.productpage h3 {
+    font-weight: bold;
+    font-size: 24px;
+}
