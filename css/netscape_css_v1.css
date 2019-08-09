@@ -183,12 +183,15 @@ a#basicform_email {
     display: block;
     width: 100%;
     margin: auto;
-    border: 1px solid white;
     color: turquoise;
+    background-color: #8d0227;
     text-decoration: none;
-    text-decoration: underline;
+    padding: 2px;
+    box-shadow: darkgray 2px 4px 8px;
 }
 a#basicform_email:focus, a#basicform_email:hover, a#basicform_email:active {
-    background-color: white;
-    color: gold;
+    background-color: transparent;
+    border: 1px solid #8d0227;
+    color: #8d0227;
+    box-shadow: none;
 }
