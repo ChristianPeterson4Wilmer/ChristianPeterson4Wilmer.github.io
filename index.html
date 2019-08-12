@@ -4,6 +4,11 @@
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<meta name="description" content="Technical Marketing Specialist Hub">
+	<style>
+        body {
+            display: none;
+        }
+    </style>
 	<title>Technical Marketing Specialist Hub</title>
 </head>
 
@@ -12,6 +17,7 @@
 <div id="background"></div>	
 
 <div id="header">
+	<a href="#"><img id="homebutton" src="./img/home_icon.png"></a>
 	<h1>Technical Marketing Specialist</h1>
 	   <h2><i>MarCom Portal</i></h2>
 	   <br />
@@ -51,7 +57,8 @@ function loadCss(browser, prePath) {
 		link.href += "netscape_css_v1.css";
 	}
 	else {
-		link.href += "other_css_v1.css";
+		alert("This site requires either Google Chrome, Firefox, Microsoft Edge, or Internet Explorer 11."
+		+ "Old versions of Internet Explorer are not currently supported.");
 	}
 
 	document.getElementsByTagName('HEAD')[0].appendChild(link);

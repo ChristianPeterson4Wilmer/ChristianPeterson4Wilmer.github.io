@@ -1,24 +1,55 @@
 body {
     font-family: Verdana, Arial, Courier, Helvetica, sans-serif;
     font-size: 14px;
+    background-color: white;
+    display: block;
 }
 
 body#homepage {
-    background-color: #535E6E;
+    /*background-color: #0047ab; old color*/
+    background-color: white;
 }
-
 div#header {
     position: absolute;
     display: block;
     margin: auto;
     width: 100%;
     height: 150px;
-    text-align: center;
+    text-align: left;
     top: 0;
     left: 0;
-    background-color: white;
-    box-shadow: black 5px 0 10px;
+    background-color: #8d0227;
+    color: white;
+    text-shadow: 2px 2px black;
+    padding-left: 10%;
     
+}
+div#footer {
+    position: fixed;
+    height: 35px;
+    width: 100%;
+    background-color:#8d0227;
+    color: black;
+    font-size: 16px;
+    border-top: 1px solid black;
+    z-index: 10;
+    text-align: center;
+    bottom: 0;
+}
+span#container_footerlinks {
+}
+
+span#container_footerlinks a {
+    cursor: pointer;
+    margin-right: 25px;
+    text-decoration: none;
+    color: turquoise;
+
+}
+span#container_footerlinks a:hover {
+    padding: 2px;
+    color: gold;
+
 }
 div#tilepage {
     position: absolute;
@@ -29,44 +60,40 @@ div#tilepage {
     left: 10%;
     top: 150px;
 }
-a#regText {
-    text-decoration: none;
-    color: white;
+div#content, div#tilepage {
+    margin-bottom: 15%;
 }
-a#regText:hover {
-    color: black;
-}
-
-div#question {
+div.question {
     text-align: center;
     position: relative;
-    float: left;
-    border: solid 2px white;
+    display: inline-block;
     padding: 10px;
     width: 300px;
+    vertical-align: center;
+    margin-left: 15px;
     height: 125px;
-    margin-left: 20px;
-    margin-top: 15px;
+    box-shadow: darkgray 2px 4px 8px;
+    background-color: #8d0227;
 
     overflow: hidden;
 
     cursor: pointer;
-    color: white;
+    color: white
 }
 
-div#question:hover {
+
+div.question:hover {
     background-color: white;
     color: black;
-    border-color: black;
+    border: 1px solid;
+    border-color: #8d0227;
+    box-shadow: none;
+    width: 298px;
+    height: 123px;
 }
 h3 {
-    color: white;
+    color: black;
 }
-h3.breakup {
-    clear: left;
-    margin-top: 50px;
-}
-
 form#salesrepsearch {
     position: relative;
     width: 480px;
@@ -79,7 +106,7 @@ input.basicform {
     font-size: 32px;
     width: 480px;
     height: 40px;
-    border-radius: 10px;
+    border: 1px solid turquoise;
 }
 span#basicgroup {
     display: block;
@@ -101,36 +128,39 @@ textarea.basicform {
     font-size: 20px;
     width: 480px;
     height: 160px;
-    border-radius: 10px;
+    border-style: none;
+    border: 1px solid turquoise;
 }
 label#basicform {
     position: relative;
     text-align: center;
     width: 480px;
-    color: white;
+    color: black;
+    font-size: 16px;
 }
-button.basicform {
+button.basicform{
     width: 100px;
     height: 35px;
     position: relative;
     float: right;
-    border-color: white;
-    background-color: lightgray;
-    color: white;
+    border-style: none;
+    background-color: #8d0227;
     font-size: 20px;
     cursor: pointer;
-    background-color: transparent;
+    color: white;
+    box-shadow: darkgray 2px 4px 8px;
 }
 button.basicform:focus, button.basicform:hover, button.basicform:active {
-    border-style: inset;
-    background-color: white;
     color: black;
+    background-color: white;
+    border: 1px solid #8d0227;
+    box-shadow: none;
 }
 div#salesrep_output {
     position: absolute;
     width: 100%;
     top: 500px;
-    color: white;
+    color: black;
     font-size: 24px;
     text-align: center;
 }
@@ -143,7 +173,7 @@ ul#outputlist {
 li {
     margin-top: 12px;
 }
-form#socialform, form#helpform, form#changeform, form#newprdctform, form#newgroupform {
+form#socialform, form#helpform, form#changeform, form#newprdctform, form#newgroupform, form#seoform {
     position: relative;
     width: 480px;
     margin: auto;
@@ -154,13 +184,28 @@ a#basicform_email {
     display: block;
     width: 100%;
     margin: auto;
-    border: 1px solid white;
-    color: white;
+    color: turquoise;
+    background-color: #8d0227;
     text-decoration: none;
-    padding: 4px;
-    text-align: center;
+    padding: 2px;
+    box-shadow: darkgray 2px 4px 8px;
 }
 a#basicform_email:focus, a#basicform_email:hover, a#basicform_email:active {
-    background-color: white;
-    color: black;
+    background-color: transparent;
+    border: 1px solid #8d0227;
+    color: #8d0227;
+    box-shadow: none;
+}
+
+#homebutton {
+    position: absolute;
+    width: 48px;
+    height: 48px;
+    top: 32px;
+    left: 16px;
+}
+
+#homebutton:hover {
+    border: 1px inset #8d0227;
+    cursor: pointer;
 }

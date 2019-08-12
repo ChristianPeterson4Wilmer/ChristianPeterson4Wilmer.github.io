@@ -1,4 +1,16 @@
-function buildLabel(parentId, labelText = "generated label", customLabelClass = "basicform", addLabelStyles = "") {
+function buildLabel(parentId, labelText, customLabelClass, addLabelStyles) {
+    if (labelText === undefined) {
+        labelText = "generated label";
+    }
+
+    if (customLabelClass === undefined) {
+        customLabelClass = "basicform";
+    }
+
+    if (addLabelStyles === undefined) {
+        addLabelStyles = "";
+    }
+
     var label = document.createElement('label');
     label.setAttribute("id", customLabelClass);
     label.setAttribute("style", addLabelStyles);
@@ -7,8 +19,35 @@ function buildLabel(parentId, labelText = "generated label", customLabelClass = 
     document.getElementById(parentId).appendChild(label);
 }
 
-function buildTextField(parentId, inputName = "generatedTextField", labelText = "generatedLabel", isRequired = false, customInputClass = "basicform",  
-     customLabelClass = "basicform", addInputStyles = "", addLabelStyles = "") {
+function buildTextField(parentId, inputName, labelText, isRequired, customInputClass, customLabelClass, addInputStyles, addLabelStyles) {
+
+    if (inputName === undefined) {
+        inputName = "generatedTextField";
+    }
+
+    if (labelText === undefined) {
+        labelText = "generatedLabel";
+    }
+    
+    if (isRequired === undefined) {
+        isRequired = false;
+    }
+
+    if (customInputClass === undefined) {
+        customInputClass = "basicform";
+    }
+
+    if (customLabelClass === undefined) {
+        customLabelClass = "bascifrom";
+    }
+
+    if (addInputStyles === undefined) {
+        addInputStyles = "";
+    }
+
+    if (addLabelStyles === undefined) {
+        addLabelStyles = "";
+    }
 
     buildLabel(parentId, labelText, customLabelClass, addLabelStyles);
     buildNewLine(parentId);
@@ -22,8 +61,36 @@ function buildTextField(parentId, inputName = "generatedTextField", labelText = 
     buildNewLine(parentId);
 }
 
-function buildTextArea(parentId, textAreaForm, inputName = "generatedTextArea", labelText = "generatedLabel", isRequired = false, customInputClass = "basicform", customLabelClass = "basicform", 
-    addInputStyles = "", addLabelStyles = "") {
+function buildTextArea(parentId, textAreaForm, inputName, labelText, isRequired, 
+    customInputClass, customLabelClass, addInputStyles, addLabelStyles) {
+    
+        if (inputName === undefined) {
+            inputName = "generatedTextArea";
+        }
+
+        if (labelText === undefined) {
+            labelText = "generatedLabel";
+        }
+
+        if (isRequired === undefined) {
+            isRequired = false;
+        }
+
+        if (customInputClass === undefined) {
+            customInputClass = "basicform";
+        }
+
+        if (customLabelClass === undefined) {
+            customLabelClass = "basicform";
+        }
+
+        if (addInputStyles === undefined) {
+            addInputStyles = "";
+        }
+
+        if (addLabelStyles === undefined) {
+            addLabelStyles = "";
+        }
     
     buildLabel(parentId, labelText, customLabelClass, addLabelStyles);
 

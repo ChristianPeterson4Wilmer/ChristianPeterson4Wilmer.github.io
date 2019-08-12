@@ -2,6 +2,7 @@ body {
     font-family: Verdana, Arial, Courier, Helvetica, sans-serif;
     font-size: 14px;
     background-color: white;
+    display: block;
 }
 
 body#homepage {
@@ -194,4 +195,17 @@ a#basicform_email:focus, a#basicform_email:hover, a#basicform_email:active {
     border: 1px solid #8d0227;
     color: #8d0227;
     box-shadow: none;
+}
+
+#homebutton {
+    position: absolute;
+    width: 48px;
+    height: 48px;
+    top: 32px;
+    left: 16px;
+}
+
+#homebutton:hover {
+    border: 1px inset #8d0227;
+    cursor: pointer;
 }
