@@ -124,3 +124,18 @@ function buildHeader(parentId, text) {
 
     document.getElementById(parentId).appendChild(header);
 }
+
+function validateAllInputs() {
+    inputs = document.getElementsByTagName('input');
+
+    for (var i = 0; i < inputs.length; i++) {
+        var elem = inputs[i];
+        if (elem.hasAttribute('required')) {
+            if (elem.value.length <= 0) {
+                return false;
+            }
+        }
+    }
+
+    return true;
+}
