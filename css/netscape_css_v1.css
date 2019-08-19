@@ -57,9 +57,10 @@ div#tilepage {
     width: 80%;
     margin: auto;
     text-align: center;
-    height: 80%;
+    height: 900px;
     left: 10%;
     top: 150px;
+    margin-bottom: 140px;
 }
 div#content, div#tilepage {
     margin-bottom: 15%;
@@ -142,14 +143,15 @@ label#basicform {
 button.basicform{
     width: 100px;
     height: 35px;
-    position: relative;
-    float: right;
     border-style: none;
     background-color: #8d0227;
     font-size: 20px;
     cursor: pointer;
     color: white;
     box-shadow: darkgray 2px 4px 8px;
+    position: relative;
+    float: right;
+    clear: right;
 }
 button.basicform:focus, button.basicform:hover, button.basicform:active {
     color: black;
@@ -158,9 +160,10 @@ button.basicform:focus, button.basicform:hover, button.basicform:active {
     box-shadow: none;
 }
 div#salesrep_output {
-    position: absolute;
+    position: relative;
+    margin-top: 64px;
+    float: left;
     width: 100%;
-    top: 500px;
     color: black;
     font-size: 24px;
     text-align: center;
@@ -206,7 +209,22 @@ a#basicform_email:focus, a#basicform_email:hover, a#basicform_email:active {
     left: 16px;
 }
 
+#wilmer-logo {
+    position: relative;
+    margin: auto;
+    margin-top: 194px;
+    margin-bottom: 96px;
+    width: 203px;
+    height: 96px;
+}
+
+.centerdiv {
+    width: 100%;
+    text-align: center;
+}
+
 #homebutton:hover {
     border: 1px inset #8d0227;
     cursor: pointer;
 }
+
